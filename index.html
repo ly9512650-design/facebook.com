@@ -1,0 +1,2294 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>تواصل — تواصل مع العالم</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#1877F2',
+              dark: '#166fe5',
+              light: '#E7F3FF',
+              bg: '#F0F2F5',
+              card: '#ffffff',
+              text: '#050505',
+              secondary: '#65676B',
+              hover: '#F2F2F2',
+              border: '#CED0D4'
+            },
+            dark: {
+              bg: '#18191A',
+              card: '#242526',
+              hover: '#3A3B3C',
+              active: '#4E4F50',
+              text: '#E4E6EB',
+              secondary: '#B0B3B8',
+              border: '#3E4042'
+            }
+          },
+          fontFamily: {
+            sans: ['Cairo', 'Inter', 'Segoe UI', 'Helvetica', 'Arial', 'sans-serif'],
+            display: ['Cairo', 'Inter', 'sans-serif']
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+            'slide-up': 'slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+            'slide-down': 'slideDown 0.3s ease-out',
+            'scale-in': 'scaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+            'bounce-soft': 'bounceSoft 2s infinite',
+            'pulse-ring': 'pulseRing 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite',
+            'story-progress': 'storyProgress 5s linear',
+            'shimmer': 'shimmer 2s infinite',
+            'float': 'float 6s ease-in-out infinite',
+            'spin-slow': 'spin 3s linear infinite',
+            'heart-beat': 'heartBeat 0.3s ease-in-out',
+            'reaction-pop': 'reactionPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+            'typing': 'typing 1.4s infinite ease-in-out both',
+            'slide-left': 'slideLeft 0.3s ease-out',
+            'slide-right': 'slideRight 0.3s ease-out'
+          },
+          keyframes: {
+            fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+            slideUp: { '0%': { opacity: '0', transform: 'translateY(30px) scale(0.95)' }, '100%': { opacity: '1', transform: 'translateY(0) scale(1)' } },
+            slideDown: { '0%': { opacity: '0', transform: 'translateY(-10px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+            scaleIn: { '0%': { opacity: '0', transform: 'scale(0.9)' }, '100%': { opacity: '1', transform: 'scale(1)' } },
+            bounceSoft: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-6px)' } },
+            pulseRing: { '0%': { transform: 'scale(0.95)', boxShadow: '0 0 0 0 rgba(24, 119, 242, 0.7)' }, '70%': { transform: 'scale(1)', boxShadow: '0 0 0 10px rgba(24, 119, 242, 0)' }, '100%': { transform: 'scale(0.95)', boxShadow: '0 0 0 0 rgba(24, 119, 242, 0)' } },
+            storyProgress: { '0%': { width: '0%' }, '100%': { width: '100%' } },
+            shimmer: { '0%': { backgroundPosition: '-1000px 0' }, '100%': { backgroundPosition: '1000px 0' } },
+            float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } },
+            heartBeat: { '0%': { transform: 'scale(1)' }, '25%': { transform: 'scale(1.3)' }, '50%': { transform: 'scale(1)' }, '75%': { transform: 'scale(1.15)' }, '100%': { transform: 'scale(1)' } },
+            reactionPop: { '0%': { transform: 'scale(0) translateY(20px)', opacity: '0' }, '50%': { transform: 'scale(1.2) translateY(-10px)' }, '100%': { transform: 'scale(1) translateY(0)', opacity: '1' } },
+            typing: { '0%, 80%, 100%': { transform: 'scale(0)' }, '40%': { transform: 'scale(1)' } },
+            slideLeft: { '0%': { transform: 'translateX(100%)' }, '100%': { transform: 'translateX(0)' } },
+            slideRight: { '0%': { transform: 'translateX(-100%)' }, '100%': { transform: 'translateX(0)' } }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    * { -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    body { font-family: 'Cairo', 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif; overflow-x: hidden; }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #BCC0C4; border-radius: 20px; }
+    .dark ::-webkit-scrollbar-thumb { background: #4E4F50; }
+    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+    .story-ring { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); padding: 3px; border-radius: 50%; }
+    .story-ring-viewed { background: #BCC0C4; padding: 3px; border-radius: 50%; }
+    .dark .story-ring-viewed { background: #4E4F50; }
+    .glass { backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); background: rgba(255,255,255,0.85); }
+    .dark .glass { background: rgba(36,37,38,0.85); }
+    .reaction-bar { transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); transform-origin: bottom right; }
+    .reaction-emoji { transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275); filter: grayscale(0.3); cursor: pointer; }
+    .reaction-emoji:hover { transform: scale(1.4) translateY(-12px); filter: grayscale(0); }
+    .btn-hover { transition: all 0.2s ease; }
+    .btn-hover:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+    .btn-hover:active { transform: translateY(0) scale(0.98); }
+    .card-hover { transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+    .card-hover:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
+    .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    .typing-dot { width: 6px; height: 6px; background: #1877F2; border-radius: 50%; display: inline-block; animation: typing 1.4s infinite ease-in-out both; }
+    .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+    .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+    @media (max-width: 768px) { .sidebar-left, .sidebar-right, .messenger-sidebar { display: none !important; } .main-feed { max-width: 100% !important; padding: 0 8px !important; } }
+    .stagger-children > * { animation: fadeIn 0.5s ease-out forwards; opacity: 0; }
+    .stagger-children > *:nth-child(1) { animation-delay: 0.05s; }
+    .stagger-children > *:nth-child(2) { animation-delay: 0.1s; }
+    .stagger-children > *:nth-child(3) { animation-delay: 0.15s; }
+    .stagger-children > *:nth-child(4) { animation-delay: 0.2s; }
+    .stagger-children > *:nth-child(5) { animation-delay: 0.25s; }
+    .page-transition { animation: fadeIn 0.4s ease-out; }
+    .chat-bubble { position: relative; }
+    .chat-bubble::before { content: ''; position: absolute; bottom: 0; width: 12px; height: 12px; }
+    .chat-bubble.sent::before { left: -6px; background: #1877F2; border-bottom-right-radius: 12px; }
+    .chat-bubble.received::before { right: -6px; background: #F0F2F5; border-bottom-left-radius: 12px; }
+    .dark .chat-bubble.received::before { background: #3A3B3C; }
+    .video-container { position: relative; background: #000; }
+    .video-container video { width: 100%; height: 100%; object-fit: cover; }
+    .call-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, transparent 40%, transparent 60%, rgba(0,0,0,0.6) 100%); }
+    .ripple { position: absolute; border-radius: 50%; background: rgba(255,255,255,0.3); animation: ripple 0.6s linear; pointer-events: none; }
+    @keyframes ripple { to { transform: scale(4); opacity: 0; } }
+    .reel-container { scroll-snap-type: y mandatory; overflow-y: scroll; height: 100vh; }
+    .reel-item { scroll-snap-align: start; height: 100vh; position: relative; }
+    .reel-video { width: 100%; height: 100%; object-fit: cover; }
+    .news-badge { position: relative; }
+    .news-badge::after { content: ''; position: absolute; top: -2px; right: -2px; width: 8px; height: 8px; background: #ff4444; border-radius: 50%; border: 2px solid white; }
+    .dark .news-badge::after { border-color: #18191A; }
+  </style>
+</head>
+<body class="bg-brand-bg dark:bg-dark-bg text-brand-text dark:text-dark-text font-sans antialiased transition-colors duration-300">
+
+<!-- ==================== LOGIN PAGE ==================== -->
+<div id="loginPage" class="min-h-screen flex items-center justify-center bg-[#F0F2F5] dark:bg-dark-bg p-4 relative overflow-hidden">
+  <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+    <div class="absolute top-20 right-10 w-72 h-72 bg-brand-blue/5 rounded-full blur-3xl animate-float"></div>
+    <div class="absolute bottom-20 left-10 w-96 h-96 bg-brand-blue/5 rounded-full blur-3xl animate-float" style="animation-delay: 2s;"></div>
+  </div>
+  <div class="max-w-[1000px] w-full flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16 relative z-10">
+    <div class="md:w-[50%] text-center md:text-right animate-slide-up">
+      <h1 class="text-brand-blue text-6xl md:text-7xl font-bold mb-4 tracking-tight">تواصل</h1>
+      <p class="text-[24px] md:text-[28px] leading-8 text-brand-text dark:text-dark-text font-normal">
+        تواصل مع الأصدقاء والعالم من حولك على تواصل.
+      </p>
+    </div>
+    <div class="md:w-[40%] w-full max-w-[400px] animate-fade-in">
+      <div class="bg-white dark:bg-dark-card rounded-xl shadow-[0_2px_4px_rgba(0,0,0,0.1),0_8px_16px_rgba(0,0,0,0.1)] p-4 transition-all hover:shadow-[0_8px_16px_rgba(0,0,0,0.15)]">
+        <input type="text" id="loginEmail" placeholder="البريد الإلكتروني أو رقم الهاتف" class="w-full px-4 py-3.5 rounded-lg border border-gray-300 dark:border-dark-border bg-white dark:bg-dark-hover text-brand-text dark:text-dark-text focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue mb-3 text-[17px] transition-all text-right">
+        <input type="password" id="loginPassword" placeholder="كلمة السر" class="w-full px-4 py-3.5 rounded-lg border border-gray-300 dark:border-dark-border bg-white dark:bg-dark-hover text-brand-text dark:text-dark-text focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue mb-3 text-[17px] transition-all text-right">
+        <button onclick="login()" class="w-full bg-brand-blue hover:bg-brand-dark text-white font-bold text-xl py-3 rounded-lg transition-all transform hover:scale-[1.02] active:scale-[0.98] btn-hover shadow-lg shadow-brand-blue/30">تسجيل الدخول</button>
+        <div class="text-center my-4"><a href="#" class="text-brand-blue text-sm hover:underline font-medium">هل نسيت كلمة السر؟</a></div>
+        <hr class="border-gray-300 dark:border-dark-border my-4">
+        <button onclick="showCreateAccount()" class="w-full bg-[#42B72A] hover:bg-[#36A420] text-white font-bold text-[17px] py-3 rounded-lg transition-all transform hover:scale-[1.02] active:scale-[0.98] btn-hover shadow-lg shadow-green-500/30">إنشاء حساب جديد</button>
+      </div>
+      <p class="text-center mt-6 text-sm text-brand-text dark:text-dark-secondary"><a href="#" class="font-semibold hover:underline">إنشاء صفحة</a> لشخصية عامة أو علامة تجارية أو نشاط تجاري.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== CREATE ACCOUNT MODAL ==================== -->
+<div id="createAccountModal" class="fixed inset-0 bg-black/60 z-50 hidden items-center justify-center p-4 backdrop-blur-sm transition-all">
+  <div class="bg-white dark:bg-dark-card rounded-xl shadow-2xl max-w-[432px] w-full p-4 animate-scale-in relative">
+    <div class="flex justify-between items-start mb-2">
+      <div>
+        <h2 class="text-[32px] font-bold text-brand-text dark:text-dark-text leading-tight">إنشاء حساب</h2>
+        <p class="text-brand-secondary dark:text-dark-secondary text-[15px]">سريع وسهل.</p>
+      </div>
+      <button onclick="hideCreateAccount()" class="w-9 h-9 rounded-full hover:bg-gray-100 dark:hover:bg-dark-hover flex items-center justify-center text-gray-500 transition-colors text-2xl">&times;</button>
+    </div>
+    <hr class="border-gray-300 dark:border-dark-border my-3">
+    <div class="flex gap-3 mb-3">
+      <input type="text" placeholder="الاسم الأول" class="flex-1 px-3 py-2.5 rounded-md border border-gray-300 dark:border-dark-border bg-gray-100 dark:bg-dark-hover focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue transition-all text-right">
+      <input type="text" placeholder="اسم العائلة" class="flex-1 px-3 py-2.5 rounded-md border border-gray-300 dark:border-dark-border bg-gray-100 dark:bg-dark-hover focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue transition-all text-right">
+    </div>
+    <input type="text" placeholder="رقم الهاتف أو البريد الإلكتروني" class="w-full px-3 py-2.5 rounded-md border border-gray-300 dark:border-dark-border bg-gray-100 dark:bg-dark-hover mb-3 focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue transition-all text-right">
+    <input type="password" placeholder="كلمة السر الجديدة" class="w-full px-3 py-2.5 rounded-md border border-gray-300 dark:border-dark-border bg-gray-100 dark:bg-dark-hover mb-3 focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue transition-all text-right">
+    <div class="mb-3">
+      <label class="text-xs text-gray-500 dark:text-dark-secondary block mb-1 font-medium">تاريخ الميلاد</label>
+      <div class="flex gap-3">
+        <select class="flex-1 px-2 py-2.5 rounded-md border border-gray-300 dark:border-dark-border bg-white dark:bg-dark-hover focus:outline-none focus:ring-2 focus:ring-brand-blue/30"><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option></select>
+        <select class="flex-1 px-2 py-2.5 rounded-md border border-gray-300 dark:border-dark-border bg-white dark:bg-dark-hover focus:outline-none focus:ring-2 focus:ring-brand-blue/30"><option>يونيو</option><option>يوليو</option><option>أغسطس</option><option>سبتمبر</option></select>
+        <select class="flex-1 px-2 py-2.5 rounded-md border border-gray-300 dark:border-dark-border bg-white dark:bg-dark-hover focus:outline-none focus:ring-2 focus:ring-brand-blue/30"><option>2026</option><option>2025</option><option>2024</option><option>2000</option><option>1999</option><option>1998</option></select>
+      </div>
+    </div>
+    <div class="mb-4">
+      <label class="text-xs text-gray-500 dark:text-dark-secondary block mb-1 font-medium">الجنس</label>
+      <div class="flex gap-3">
+        <label class="flex-1 flex items-center justify-between border border-gray-300 dark:border-dark-border rounded-md px-3 py-2.5 cursor-pointer hover:bg-gray-50 dark:hover:bg-dark-hover transition-colors"><span class="text-sm font-medium">أنثى</span><input type="radio" name="gender" class="w-4 h-4 accent-brand-blue"></label>
+        <label class="flex-1 flex items-center justify-between border border-gray-300 dark:border-dark-border rounded-md px-3 py-2.5 cursor-pointer hover:bg-gray-50 dark:hover:bg-dark-hover transition-colors"><span class="text-sm font-medium">ذكر</span><input type="radio" name="gender" class="w-4 h-4 accent-brand-blue"></label>
+        <label class="flex-1 flex items-center justify-between border border-gray-300 dark:border-dark-border rounded-md px-3 py-2.5 cursor-pointer hover:bg-gray-50 dark:hover:bg-dark-hover transition-colors"><span class="text-sm font-medium">مخصص</span><input type="radio" name="gender" class="w-4 h-4 accent-brand-blue"></label>
+      </div>
+    </div>
+    <p class="text-[11px] text-gray-500 dark:text-dark-secondary mb-4 leading-tight">بالنقر على "إنشاء حساب"، فإنك توافق على <a href="#" class="text-brand-blue hover:underline">الشروط</a> و<a href="#" class="text-brand-blue hover:underline">سياسة البيانات</a> و<a href="#" class="text-brand-blue hover:underline">سياسة الكوكيز</a>.</p>
+    <button onclick="signup()" class="w-full bg-[#00A400] hover:bg-[#008200] text-white font-bold text-lg py-2.5 rounded-md transition-all btn-hover shadow-lg shadow-green-500/30">إنشاء حساب</button>
+  </div>
+</div>
+
+<!-- ==================== MAIN APP CONTAINER ==================== -->
+<div id="mainApp" class="hidden">
+
+  <!-- ==================== NAVBAR ==================== -->
+  <header class="fixed top-0 left-0 right-0 h-14 bg-white/90 dark:bg-dark-card/90 backdrop-blur-xl z-40 flex items-center justify-between px-2 md:px-4 shadow-sm transition-all border-b border-transparent dark:border-dark-border/50">
+    <div class="flex items-center gap-2 flex-1">
+      <div class="relative group cursor-pointer" onclick="navigateTo('home')">
+        <i class="fab fa-facebook text-brand-blue text-[40px] transition-transform group-hover:scale-110 duration-300"></i>
+        <div class="absolute -bottom-1 -left-1 w-3 h-3 bg-green-500 rounded-full border-2 border-white dark:border-dark-card animate-pulse"></div>
+      </div>
+      <div class="relative hidden md:block">
+        <div class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-brand-blue transition-colors"><i class="fas fa-search text-sm"></i></div>
+        <input type="text" id="searchInput" placeholder="البحث في تواصل" onfocus="toggleSearchDropdown(true)" onblur="setTimeout(()=>toggleSearchDropdown(false), 200)" class="w-[240px] h-10 pl-10 pr-4 rounded-full bg-gray-100 dark:bg-dark-hover text-brand-text dark:text-dark-text focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:bg-white dark:focus:bg-dark-card border border-transparent focus:border-brand-blue/30 transition-all text-[15px]">
+        <div id="searchDropdown" class="absolute top-full left-0 mt-2 w-[320px] bg-white dark:bg-dark-card rounded-xl shadow-2xl border border-gray-200 dark:border-dark-border hidden p-2 z-50 animate-fade-in overflow-hidden">
+          <div class="flex items-center justify-between px-3 py-2">
+            <p class="text-sm font-semibold text-gray-500 dark:text-dark-secondary">عمليات البحث الأخيرة</p>
+            <button class="text-brand-blue text-xs font-medium hover:underline">تحرير</button>
+          </div>
+          <div class="space-y-0.5" id="searchResults"></div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Center Navigation -->
+    <nav class="flex items-center justify-center flex-1 max-w-[600px] gap-1 md:gap-2 h-full">
+      <button onclick="navigateTo('home')" id="nav-home" class="nav-btn flex-1 h-full flex items-center justify-center rounded-lg hover:bg-gray-100 dark:hover:bg-dark-hover text-brand-blue border-b-[3px] border-brand-blue transition-all relative group">
+        <div class="relative"><i class="fas fa-home text-[22px] md:text-[26px]"></i></div>
+        <span class="absolute bottom-1 bg-gray-800 text-white text-xs px-2 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-all pointer-events-none whitespace-nowrap z-50">الرئيسية</span>
+      </button>
+      <button onclick="navigateTo('watch')" id="nav-watch" class="nav-btn flex-1 h-full flex items-center justify-center rounded-lg hover:bg-gray-100 dark:hover:bg-dark-hover text-gray-500 dark:text-dark-secondary transition-all relative group">
+        <div class="relative"><i class="fas fa-tv text-[22px] md:text-[26px]"></i></div>
+        <span class="absolute bottom-1 bg-gray-800 text-white text-xs px-2 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-all pointer-events-none whitespace-nowrap z-50">مشاهدة</span>
+      </button>
+      <button onclick="navigateTo('marketplace')" id="nav-marketplace" class="nav-btn flex-1 h-full flex items-center justify-center rounded-lg hover:bg-gray-100 dark:hover:bg-dark-hover text-gray-500 dark:text-dark-secondary transition-all relative group">
+        <div class="relative"><i class="fas fa-store text-[22px] md:text-[26px]"></i></div>
+        <span class="absolute bottom-1 bg-gray-800 text-white text-xs px-2 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-all pointer-events-none whitespace-nowrap z-50">السوق</span>
+      </button>
+      <button onclick="navigateTo('groups')" id="nav-groups" class="nav-btn flex-1 h-full flex items-center justify-center rounded-lg hover:bg-gray-100 dark:hover:bg-dark-hover text-gray-500 dark:text-dark-secondary transition-all relative group">
+        <div class="relative"><i class="fas fa-users text-[22px] md:text-[26px]"></i></div>
+        <span class="absolute bottom-1 bg-gray-800 text-white text-xs px-2 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-all pointer-events-none whitespace-nowrap z-50">المجموعات</span>
+      </button>
+      <button onclick="navigateTo('gaming')" id="nav-gaming" class="nav-btn flex-1 h-full flex items-center justify-center rounded-lg hover:bg-gray-100 dark:hover:bg-dark-hover text-gray-500 dark:text-dark-secondary transition-all relative group">
+        <div class="relative"><i class="fas fa-gamepad text-[22px] md:text-[26px]"></i></div>
+        <span class="absolute bottom-1 bg-gray-800 text-white text-xs px-2 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-all pointer-events-none whitespace-nowrap z-50">الألعاب</span>
+      </button>
+      <button onclick="navigateTo('reels')" id="nav-reels" class="nav-btn flex-1 h-full flex items-center justify-center rounded-lg hover:bg-gray-100 dark:hover:bg-dark-hover text-gray-500 dark:text-dark-secondary transition-all relative group hidden md:flex">
+        <div class="relative"><i class="fas fa-clapperboard text-[22px] md:text-[26px]"></i></div>
+        <span class="absolute bottom-1 bg-gray-800 text-white text-xs px-2 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-all pointer-events-none whitespace-nowrap z-50">ريلز</span>
+      </button>
+    </nav>
+    
+    <!-- Right Actions -->
+    <div class="flex items-center justify-end gap-1 md:gap-2 flex-1">
+      <button onclick="toggleDarkMode()" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-dark-hover hover:bg-gray-200 dark:hover:bg-dark-active flex items-center justify-center transition-all" title="الوضع الليلي">
+        <i class="fas fa-moon text-gray-700 dark:text-dark-text text-lg transition-all" id="darkModeIcon"></i>
+      </button>
+      <button onclick="toggleLanguage()" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-dark-hover hover:bg-gray-200 dark:hover:bg-dark-active flex items-center justify-center transition-all font-bold text-sm" title="تغيير اللغة">EN</button>
+      <button onclick="openMessenger()" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-dark-hover hover:bg-gray-200 dark:hover:bg-dark-active flex items-center justify-center transition-all relative" title="المسنجر">
+        <i class="fab fa-facebook-messenger text-gray-700 dark:text-dark-text text-lg"></i>
+        <span class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-bold border-2 border-white dark:border-dark-card animate-bounce-soft">3</span>
+      </button>
+      <button onclick="toggleNotifications()" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-dark-hover hover:bg-gray-200 dark:hover:bg-dark-active flex items-center justify-center transition-all relative" title="الإشعارات">
+        <i class="fas fa-bell text-gray-700 dark:text-dark-text text-lg"></i>
+        <span class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-bold border-2 border-white dark:border-dark-card animate-bounce-soft">9+</span>
+      </button>
+      <button onclick="toggleAccountMenu()" class="w-10 h-10 rounded-full overflow-hidden border-2 border-transparent hover:border-gray-300 dark:hover:border-dark-active transition-all relative">
+        <img src="https://i.pravatar.cc/150?img=11" alt="Profile" class="w-full h-full object-cover">
+        <div class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-white dark:border-dark-card"></div>
+      </button>
+      
+      <!-- Account Menu -->
+      <div id="accountMenuDropdown" class="fixed top-14 right-2 w-[360px] bg-white dark:bg-dark-card rounded-xl shadow-2xl border border-gray-200 dark:border-dark-border hidden overflow-hidden z-50 animate-scale-in origin-top-right">
+        <div class="p-2">
+          <div class="flex items-center gap-3 p-3 hover:bg-gray-100 dark:hover:bg-dark-hover rounded-xl cursor-pointer transition-all" onclick="navigateTo('profile')">
+            <img src="https://i.pravatar.cc/150?img=11" class="w-10 h-10 rounded-full object-cover">
+            <div><p class="font-bold text-[17px]">أحمد خالد</p><p class="text-sm text-gray-500 dark:text-dark-secondary">عرض الملف الشخصي</p></div>
+          </div>
+          <hr class="border-gray-200 dark:border-dark-border my-2">
+          <div class="space-y-0.5">
+            <button onclick="navigateTo('settings')" class="w-full flex items-center gap-3 p-2.5 hover:bg-gray-100 dark:hover:bg-dark-hover rounded-xl transition-colors text-right">
+              <div class="w-9 h-9 rounded-full bg-gray-200 dark:bg-dark-hover flex items-center justify-center"><i class="fas fa-cog text-gray-700 dark:text-dark-text"></i></div>
+              <div class="flex-1"><p class="font-medium text-[15px]">الإعدادات والخصوصية</p></div>
+              <i class="fas fa-chevron-left text-gray-400 text-sm"></i>
+            </button>
+            <button class="w-full flex items-center gap-3 p-2.5 hover:bg-gray-100 dark:hover:bg-dark-hover rounded-xl transition-colors text-right">
+              <div class="w-9 h-9 rounded-full bg-gray-200 dark:bg-dark-hover flex items-center justify-center"><i class="fas fa-question-circle text-gray-700 dark:text-dark-text"></i></div>
+              <div class="flex-1"><p class="font-medium text-[15px]">المساعدة والدعم</p></div>
+              <i class="fas fa-chevron-left text-gray-400 text-sm"></i>
+            </button>
+            <button onclick="toggleDarkMode()" class="w-full flex items-center gap-3 p-2.5 hover:bg-gray-100 dark:hover:bg-dark-hover rounded-xl transition-colors text-right">
+              <div class="w-9 h-9 rounded-full bg-gray-200 dark:bg-dark-hover flex items-center justify-center"><i class="fas fa-moon text-gray-700 dark:text-dark-text"></i></div>
+              <div class="flex-1"><p class="font-medium text-[15px]">العرض والوصول</p></div>
+              <div class="w-12 h-6 bg-gray-300 dark:bg-brand-blue rounded-full relative transition-colors"><div class="absolute top-0.5 right-0.5 w-5 h-5 bg-white rounded-full shadow-md transition-transform dark:translate-x-0 translate-x-6"></div></div>
+            </button>
+            <button onclick="showLogoutConfirm()" class="w-full flex items-center gap-3 p-2.5 hover:bg-gray-100 dark:hover:bg-dark-hover rounded-xl transition-colors text-right">
+              <div class="w-9 h-9 rounded-full bg-red-100 dark:bg-red-900/20 flex items-center justify-center"><i class="fas fa-sign-out-alt text-red-500"></i></div>
+              <span class="font-medium text-[15px] text-red-500">تسجيل الخروج</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Notifications -->
+      <div id="notificationsDropdown" class="fixed top-14 right-2 w-[360px] max-h-[80vh] bg-white dark:bg-dark-card rounded-xl shadow-2xl border border-gray-200 dark:border-dark-border hidden overflow-hidden z-50 animate-scale-in origin-top-right">
+        <div class="p-4 border-b border-gray-200 dark:border-dark-border flex justify-between items-center">
+          <h3 class="text-xl font-bold">الإشعارات</h3>
+          <div class="flex gap-2">
+            <button onclick="markAllNotificationsRead()" class="w-8 h-8 rounded-full hover:bg-gray-100 dark:hover:bg-dark-hover flex items-center justify-center text-gray-500 transition-colors" title="تحديد الكل كمقروء"><i class="fas fa-check-double text-sm"></i></button>
+            <button class="w-8 h-8 rounded-full hover:bg-gray-100 dark:hover:bg-dark-hover flex items-center justify-center text-gray-500 transition-colors"><i class="fas fa-cog text-sm"></i></button>
+          </div>
+        </div>
+        <div class="overflow-y-auto max-h-[60vh] p-2 space-y-1" id="notificationsList"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== HOME PAGE ==================== -->
+  <div id="homePage" class="pt-14 flex max-w-[1600px] mx-auto min-h-screen page-transition">
+    
+    <!-- Left Sidebar -->
+    <aside class="sidebar-left w-[300px] xl:w-[360px] sticky top-14 h-[calc(100vh-56px)] overflow-y-auto p-2 hidden lg:block hide-scrollbar">
+      <div class="space-y-1">
+        <div onclick="navigateTo('profile')" class="flex items-center gap-3 p-2 hover:bg-gray-200 dark:hover:bg-dark-hover rounded-xl cursor-pointer transition-all group">
+          <div class="relative"><img src="https://i.pravatar.cc/150?img=11" class="w-9 h-9 rounded-full object-cover"><div class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 rounded-full border-2 border-brand-bg dark:border-dark-bg"></div></div>
+          <span class="font-semibold text-[15px] group-hover:text-brand-blue transition-colors">أحمد خالد</span>
+        </div>
+        <div class="flex items-center gap-3 p-2 hover:bg-gray-200 dark:hover:bg-dark-hover rounded-xl cursor-pointer transition-all group">
+          <div class="w-9 h-9 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-brand-blue"><i class="fas fa-user-friends text-lg"></i></div>
+          <span class="font-semibold text-[15px]">الأصدقاء</span>
+        </div>
+        <div class="flex items-center gap-3 p-2 hover:bg-gray-200 dark:hover:bg-dark-hover rounded-xl cursor-pointer transition-all group">
+          <div class="w-9 h-9 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600"><i class="fas fa-clock text-lg"></i></div>
+          <span class="font-semibold text-[15px]">الذكريات</span>
+        </div>
+        <div class="flex items-center gap-3 p-2 hover:bg-gray-200 dark:hover:bg-dark-hover rounded-xl cursor-pointer transition-all group">
+          <div class="w-9 h-9 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600"><i class="fas fa-bookmark text-lg"></i></div>
+          <span class="font-semibold text-[15px]">المحفوظات</span>
+        </div>
+        <div class="flex items-center gap-3 p-2 hover:bg-gray-200 dark:hover:bg-dark-hover rounded-xl cursor-pointer transition-all group">
+          <div class="w-9 h-9 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-brand-blue"><i class="fas fa-users text-lg"></i></div>
+          <span class="font-semibold text-[15px]">المجموعات</span>
+          <div class="mr-auto w-5 h-5 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold animate-pulse">2</div>
+        </div>
+        <div class="flex items-center gap-3 p-2 hover:bg-gray-200 dark:hover:bg-dark-hover rounded-xl cursor-pointer transition-all group">
+          <div class="w-9 h-9 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-brand-blue"><i class="fas fa-tv text-lg"></i></div>
+          <span class="font-semibold text-[15px]">فيديو</span>
+        </div>
+        <div onclick="openMessenger()" class="flex items-center gap-3 p-2 hover:bg-gray-200 dark:hover:bg-dark-hover rounded-xl cursor-pointer transition-all group">
+          <div class="w-9 h-9 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-brand-blue"><i class="fab fa-facebook-messenger text-lg"></i></div>
+          <span class="font-semibold text-[15px]">المسنجر</span>
+        </div>
+        <div onclick="navigateTo('rooms')" class="flex items-center gap-3 p-2 hover:bg-gray-200 dark:hover:bg-dark-hover rounded-xl cursor-pointer transition-all group">
+          <div class="w-9 h-9 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600"><i class="fas fa-video text-lg"></i></div>
+          <span class="font-semibold text-[15px]">الغرف</span>
+        </div>
+        <div class="flex items-center gap-3 p-2 hover:bg-gray-200 dark:hover:bg-dark-hover rounded-xl cursor-pointer transition-all group">
+          <div class="w-9 h-9 rounded-full bg-gray-200 dark:bg-dark-hover flex items-center justify-center text-gray-600 dark:text-dark-secondary"><i class="fas fa-chevron-down text-sm"></i></div>
+          <span class="font-semibold text-[15px]">المزيد</span>
+        </div>
+      </div>
+      <hr class="border-gray-300 dark:border-dark-border my-3 mx-2">
+      <p class="text-[17px] font-semibold text-gray-500 dark:text-dark-secondary px-2 mb-2">اختصاراتك</p>
+      <div class="space-y-1" id="shortcutsList"></div>
+      <div class="mt-4 px-2"><p class="text-xs text-gray-400 dark:text-dark-secondary">الخصوصية · الشروط · الإعلانات · ملفات تعريف الارتباط · تواصل © 2026</p></div>
+    </aside>
+
+    <!-- Center Feed -->
+    <main class="main-feed flex-1 max-w-[680px] mx-auto w-full px-2 md:px-0">
+      
+      <!-- Rooms -->
+      <div class="bg-white dark:bg-dark-card rounded-xl shadow-sm p-4 mt-4 mb-4 card-hover">
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="font-bold text-lg">الغرف الصوتية</h3>
+          <button onclick="openCreateRoom()" class="text-brand-blue text-sm font-medium hover:underline">إنشاء غرفة</button>
+        </div>
+        <div class="flex gap-3 overflow-x-auto hide-scrollbar pb-2" id="roomsList"></div>
+      </div>
+
+      <!-- Stories -->
+      <div class="bg-white dark:bg-dark-card rounded-xl shadow-sm p-4 mb-4 card-hover">
+        <div class="flex gap-2 overflow-x-auto hide-scrollbar pb-2 stagger-children" id="storiesContainer"></div>
+      </div>
+
+      <!-- Create Post -->
+      <div class="bg-white dark:bg-dark-card rounded-xl shadow-sm p-4 mb-4 card-hover">
+        <div class="flex gap-3 mb-3">
+          <img src="https://i.pravatar.cc/150?img=11" class="w-10 h-10 rounded-full object-cover cursor-pointer ring-2 ring-brand-blue/20" onclick="navigateTo('profile')">
+          <div onclick="openCreatePost()" class="flex-1 bg-gray-100 dark:bg-dark-hover rounded-full px-4 py-2.5 cursor-pointer hover:bg-gray-200 dark:hover:bg-dark-active transition-all flex items-center">
+            <span class="text-gray-500 dark:text-dark-secondary text-[15px]">بماذا تفكر، أحمد؟</span>
+          </div>
+        </div>
+        <hr class="border-gray-200 dark:border-dark-border mb-3">
+        <div class="flex justify-between">
+          <button onclick="openLiveModal()" class="flex-1 flex items-center justify-center gap-2 py-2 hover:bg-gray-100 dark:hover:bg-dark-hover rounded-lg transition-all group">
+            <i class="fas fa-video text-red-500 text-xl group-hover:scale-110 transition-transform"></i>
+            <span class="text-gray-500 dark:text-dark-secondary text-sm font-medium hidden sm:inline">بث مباشر</span>
+          </button>
+          <button onclick="openCreatePost()" class="flex-1 flex items-center justify-center gap-2 py-2 hover:bg-gray-100 dark:hover:bg-dark-hover rounded-lg transition-all group">
+            <i class="fas fa-images text-green-500 text-xl group-hover:scale-110 transition-transform"></i>
+            <span class="text-gray-500 dark:text-dark-secondary text-sm font-medium hidden sm:inline">صور/فيديو</span>
+          </button>
+          <button onclick="openCreatePost()" class="flex-1 flex items-center justify-center gap-2 py-2 hover:bg-gray-100 dark:hover:bg-dark-hover rounded-lg transition-all group">
+            <i class="fas fa-smile text-yellow-500 text-xl group-hover:scale-110 transition-transform"></i>
+            <span class="text-gray-500 dark:text-dark-secondary text-sm font-medium hidden sm:inline">شعور/نشاط</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Posts Feed -->
+      <div id="postsFeed" class="space-y-4 pb-8 stagger-children"></div>
+      <div id="feedLoader" class="hidden py-4 text-center"><div class="inline-block w-8 h-8 border-4 border-brand-blue border-t-transparent rounded-full animate-spin"></div></div>
+    </main>
+
+    <!-- Right Sidebar -->
+    <aside class="sidebar-right w-[300px] xl:w-[360px] sticky top-14 h-[calc(100vh-56px)] overflow-y-auto p-4 hidden lg:block hide-scrollbar">
+      <!-- Sponsored -->
+      <div class="mb-4">
+        <div class="flex justify-between items-center mb-3"><h3 class="text-[17px] font-semibold text-gray-500 dark:text-dark-secondary">مُموَّل</h3></div>
+        <div class="space-y-3" id="sponsoredList"></div>
+      </div>
+      
+      <!-- Latest News -->
+      <div class="mb-4">
+        <div class="flex justify-between items-center mb-3">
+          <h3 class="text-[17px] font-semibold text-gray-500 dark:text-dark-secondary flex items-center gap-2">
+            <i class="fas fa-newspaper text-brand-blue"></i> آخر الأخبار
+          </h3>
+          <button onclick="navigateTo('watch')" class="text-brand-blue text-xs font-medium hover:underline">المزيد</button>
+        </div>
+        <div class="bg-white dark:bg-dark-card rounded-xl shadow-sm p-3 space-y-3" id="latestNewsList"></div>
+      </div>
+
+      <!-- Trending -->
+      <div class="mb-4">
+        <h3 class="text-[17px] font-semibold text-gray-500 dark:text-dark-secondary mb-2 flex items-center gap-2">
+          <i class="fas fa-fire text-orange-500"></i> الأكثر تداولاً
+        </h3>
+        <div class="bg-white dark:bg-dark-card rounded-xl shadow-sm p-3 space-y-2" id="trendingList"></div>
+      </div>
+
+      <hr class="border-gray-300 dark:border-dark-border my-3">
+      
+      <!-- Birthdays -->
+      <div class="mb-4">
+        <h3 class="text-[17px] font-semibold text-gray-500 dark:text-dark-secondary mb-2">أعياد الميلاد</h3>
+        <div class="flex items-center gap-3 p-2 hover:bg-gray-100 dark:hover:bg-dark-hover rounded-xl cursor-pointer transition-all">
+          <div class="w-9 h-9 flex items-center justify-center text-brand-blue text-xl"><i class="fas fa-gift"></i></div>
+          <p class="text-[15px]"><span class="font-semibold">سارة أحمد</span> و<span class="font-semibold">2 آخرين</span> يحتفلون بأعياد ميلاد اليوم.</p>
+        </div>
+      </div>
+      
+      <hr class="border-gray-300 dark:border-dark-border my-3">
+      
+      <!-- Contacts -->
+      <div>
+        <div class="flex justify-between items-center mb-3">
+          <h3 class="text-[17px] font-semibold text-gray-500 dark:text-dark-secondary">جهات الاتصال</h3>
+          <div class="flex gap-1">
+            <button class="w-8 h-8 rounded-full hover:bg-gray-200 dark:hover:bg-dark-hover flex items-center justify-center text-gray-500 transition-colors"><i class="fas fa-video text-sm"></i></button>
+            <button class="w-8 h-8 rounded-full hover:bg-gray-200 dark:hover:bg-dark-hover flex items-center justify-center text-gray-500 transition-colors"><i class="fas fa-search text-sm"></i></button>
+            <button class="w-8 h-8 rounded-full hover:bg-gray-200 dark:hover:bg-dark-hover flex items-center justify-center text-gray-500 transition-colors"><i class="fas fa-ellipsis-h text-sm"></i></button>
+          </div>
+        </div>
+        <div class="space-y-0.5" id="contactsList"></div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ==================== MESSENGER PAGE ==================== -->
+  <div id="messengerPage" class="hidden pt-14 h-screen flex page-transition">
+    <div class="messenger-sidebar w-[360px] bg-white dark:bg-dark-card border-r border-gray-200 dark:border-dark-border flex flex-col h-full">
+      <div class="p-3 border-b border-gray-200 dark:border-dark-border">
+        <div class="flex justify-between items-center mb-3">
+          <h2 class="text-xl font-bold">المحادثات</h2>
+          <div class="flex gap-2">
+            <button onclick="openCreateRoom()" class="w-8 h-8 rounded-full hover:bg-gray-100 dark:hover:bg-dark-hover flex items-center justify-center text-gray-500 transition-colors"><i class="fas fa-video text-sm"></i></button>
+            <button class="w-8 h-8 rounded-full hover:bg-gray-100 dark:hover:bg-dark-hover flex items-center justify-center text-gray-500 transition-colors"><i class="fas fa-edit text-sm"></i></button>
+          </div>
+        </div>
+        <div class="relative">
+          <i class="fas fa-search absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+          <input type="text" id="messengerSearch" placeholder="البحث في المسنجر" oninput="filterMessengerSearch()" class="w-full bg-gray-100 dark:bg-dark-hover rounded-full pr-9 pl-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue/20 dark:text-dark-text transition-all">
+        </div>
+        <div class="flex gap-2 mt-3 overflow-x-auto hide-scrollbar">
+          <button onclick="filterMessenger('all')" class="px-3 py-1 bg-brand-blue text-white rounded-full text-xs font-medium whitespace-nowrap">الكل</button>
+          <button onclick="filterMessenger('unread')" class="px-3 py-1 bg-gray-100 dark:bg-dark-hover text-gray-600 dark:text-dark-secondary rounded-full text-xs font-medium whitespace-nowrap hover:bg-gray-200">غير مقروء</button>
+          <button onclick="filterMessenger('groups')" class="px-3 py-1 bg-gray-100 dark:bg-dark-hover text-gray-600 dark:text-dark-secondary rounded-full text-xs font-medium whitespace-nowrap hover:bg-gray-200">مجموعات</button>
+        </div>
+      </div>
+      <div class="flex-1 overflow-y-auto hide-scrollbar p-2" id="messengerChatList"></div>
+    </div>
+    
+    <div class="flex-1 flex flex-col h-full bg-brand-bg dark:bg-dark-bg relative">
+      <div id="chatHeader" class="h-16 bg-white dark:bg-dark-card border-b border-gray-200 dark:border-dark-border flex items-center justify-between px-4 shadow-sm hidden">
+        <div class="flex items-center gap-3">
+          <div class="relative">
+            <img id="chatHeaderAvatar" src="" class="w-10 h-10 rounded-full object-cover">
+            <div id="chatHeaderStatus" class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-white dark:border-dark-card"></div>
+          </div>
+          <div>
+            <p id="chatHeaderName" class="font-bold text-[15px]"></p>
+            <p id="chatHeaderStatusText" class="text-xs text-gray-500 dark:text-dark-secondary">نشط الآن</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="startVoiceCall()" class="w-9 h-9 rounded-full hover:bg-gray-100 dark:hover:bg-dark-hover flex items-center justify-center text-brand-blue transition-colors"><i class="fas fa-phone text-lg"></i></button>
+          <button onclick="startVideoCall()" class="w-9 h-9 rounded-full hover:bg-gray-100 dark:hover:bg-dark-hover flex items-center justify-center text-brand-blue transition-colors"><i class="fas fa-video text-lg"></i></button>
+          <button class="w-9 h-9 rounded-full hover:bg-gray-100 dark:hover:bg-dark-hover flex items-center justify-center text-gray-500 transition-colors"><i class="fas fa-info-circle text-lg"></i></button>
+        </div>
+      </div>
+      
+      <div id="chatMessagesArea" class="flex-1 overflow-y-auto p-4 space-y-3 hidden"></div>
+      
+      <div id="chatInputArea" class="p-3 bg-white dark:bg-dark-card border-t border-gray-200 dark:border-dark-border hidden">
+        <div class="flex items-end gap-2">
+          <div class="flex gap-1">
+            <button class="w-9 h-9 rounded-full hover:bg-gray-100 dark:hover:bg-dark-hover flex items-center justify-center text-brand-blue transition-colors"><i class="fas fa-plus-circle text-xl"></i></button>
+            <button class="w-9 h-9 rounded-full hover:bg-gray-100 dark:hover:bg-dark-hover flex items-center justify-center text-brand-blue transition-colors"><i class="fas fa-image text-xl"></i></button>
+            <button class="w-9 h-9 rounded-full hover:bg-gray-100 dark:hover:bg-dark-hover flex items-center justify-center text-brand-blue transition-colors"><i class="fas fa-sticker text-xl"></i></button>
+          </div>
+          <div class="flex-1 relative">
+            <input type="text" id="chatInput" placeholder="اكتب رسالة..." onkeypress="if(event.key==='Enter')sendMessage()" class="w-full bg-gray-100 dark:bg-dark-hover rounded-full px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue/20 dark:text-dark-text transition-all text-right">
+            <button onclick="sendMessage()" class="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-brand-blue text-white flex items-center justify-center hover:bg-brand-dark transition-colors"><i class="fas fa-paper-plane text-sm"></i></button>
+          </div>
+          <button class="w-9 h-9 rounded-full hover:bg-gray-100 dark:hover:bg-dark-hover flex items-center justify-center text-brand-blue transition-colors"><i class="fas fa-thumbs-up text-xl"></i></button>
+        </div>
+      </div>
+      
+      <div id="chatEmptyState" class="flex-1 flex items-center justify-center flex-col text-gray-400 dark:text-dark-secondary">
+        <i class="fab fa-facebook-messenger text-6xl mb-4 text-brand-blue/30"></i>
+        <p class="text-lg font-medium">اختر محادثة لبدء الدردشة</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== REELS PAGE ==================== -->
+  <div id="reelsPage" class="hidden pt-14 h-screen bg-black page-transition">
+    <div class="reel-container hide-scrollbar" id="reelsContainer"></div>
+  </div>
+
+  <!-- ==================== WATCH PAGE ==================== -->
+  <div id="watchPage" class="hidden pt-14 min-h-screen bg-brand-bg dark:bg-dark-bg page-transition">
+    <div class="max-w-[1000px] mx-auto p-4">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-bold">مشاهدة</h2>
+        <div class="flex gap-2">
+          <button class="px-4 py-2 bg-brand-blue text-white rounded-lg font-semibold text-sm">لك</button>
+          <button class="px-4 py-2 bg-gray-200 dark:bg-dark-hover rounded-lg font-semibold text-sm hover:bg-gray-300 transition-colors">مباشر</button>
+          <button class="px-4 py-2 bg-gray-200 dark:bg-dark-hover rounded-lg font-semibold text-sm hover:bg-gray-300 transition-colors">ألعاب</button>
+          <button class="px-4 py-2 bg-gray-200 dark:bg-dark-hover rounded-lg font-semibold text-sm hover:bg-gray-300 transition-colors">متابَع</button>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="watchVideosList"></div>
+    </div>
+  </div>
+
+  <!-- ==================== MARKETPLACE PAGE ==================== -->
+  <div id="marketplacePage" class="hidden pt-14 min-h-screen bg-brand-bg dark:bg-dark-bg page-transition">
+    <div class="max-w-[1200px] mx-auto p-4">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-bold">السوق</h2>
+        <button class="px-4 py-2 bg-brand-blue text-white rounded-lg font-semibold text-sm flex items-center gap-2 btn-hover shadow-lg shadow-brand-blue/30"><i class="fas fa-plus"></i> بيع شيء</button>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4" id="marketplaceItems"></div>
+    </div>
+  </div>
+
+  <!-- ==================== GROUPS PAGE ==================== -->
+  <div id="groupsPage" class="hidden pt-14 min-h-screen bg-brand-bg dark:bg-dark-bg page-transition">
+    <div class="max-w-[800px] mx-auto p-4">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-bold">المجموعات</h2>
+        <button class="px-4 py-2 bg-brand-blue text-white rounded-lg font-semibold text-sm flex items-center gap-2 btn-hover shadow-lg shadow-brand-blue/30"><i class="fas fa-plus"></i> إنشاء مجموعة</button>
+      </div>
+      <div class="space-y-4" id="groupsList"></div>
+    </div>
+  </div>
+
+  <!-- ==================== GAMING PAGE ==================== -->
+  <div id="gamingPage" class="hidden pt-14 min-h-screen bg-brand-bg dark:bg-dark-bg page-transition">
+    <div class="max-w-[800px] mx-auto p-4">
+      <h2 class="text-2xl font-bold mb-6">الألعاب</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="gamesList"></div>
+    </div>
+  </div>
+
+  <!-- ==================== ROOMS PAGE ==================== -->
+  <div id="roomsPage" class="hidden pt-14 min-h-screen bg-brand-bg dark:bg-dark-bg page-transition">
+    <div class="max-w-[800px] mx-auto p-4">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-bold">الغرف الصوتية</h2>
+        <button onclick="openCreateRoom()" class="px-4 py-2 bg-brand-blue text-white rounded-lg font-semibold text-sm flex items-center gap-2 btn-hover shadow-lg shadow-brand-blue/30"><i class="fas fa-plus"></i> إنشاء غرفة</button>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="roomsPageList"></div>
+    </div>
+  </div>
+
+  <!-- ==================== PROFILE PAGE ==================== -->
+  <div id="profilePage" class="hidden pt-14 min-h-screen bg-brand-bg dark:bg-dark-bg page-transition">
+    <div class="max-w-[900px] mx-auto">
+      <div class="relative h-[300px] md:h-[400px] rounded-b-xl overflow-hidden group">
+        <img src="https://picsum.photos/seed/cover/900/400" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <button class="absolute bottom-4 right-4 bg-white/90 dark:bg-dark-card/90 backdrop-blur-md hover:bg-white dark:hover:bg-dark-hover px-4 py-2 rounded-lg font-semibold text-sm shadow-lg transition-all flex items-center gap-2 hover:scale-105"><i class="fas fa-camera"></i> إضافة صورة غلاف</button>
+      </div>
+      <div class="px-4 md:px-8 pb-4 relative -mt-8">
+        <div class="flex flex-col md:flex-row items-center md:items-end mb-4">
+          <div class="relative group">
+            <div class="w-[140px] h-[140px] md:w-[168px] md:h-[168px] rounded-full border-4 border-white dark:border-dark-bg overflow-hidden bg-white shadow-xl ring-4 ring-brand-blue/10">
+              <img src="https://i.pravatar.cc/150?img=11" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            </div>
+            <button class="absolute bottom-2 right-2 w-10 h-10 bg-gray-200 dark:bg-dark-hover hover:bg-gray-300 rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110"><i class="fas fa-camera text-gray-700 dark:text-dark-text"></i></button>
+          </div>
+          <div class="mt-3 md:mt-0 md:mr-6 text-center md:text-right flex-1">
+            <h1 class="text-[28px] md:text-[32px] font-bold">أحمد خالد</h1>
+            <p class="text-gray-500 dark:text-dark-secondary text-[17px]">2.1K صديق</p>
+          </div>
+          <div class="flex gap-2 mt-4 md:mt-0">
+            <button class="bg-brand-blue hover:bg-brand-dark text-white px-4 py-2 rounded-lg font-semibold text-[15px] flex items-center gap-2 transition-all btn-hover shadow-lg shadow-brand-blue/30"><i class="fas fa-plus"></i> إضافة إلى القصة</button>
+            <button class="bg-gray-200 dark:bg-dark-hover hover:bg-gray-300 dark:hover:bg-dark-active px-4 py-2 rounded-lg font-semibold text-[15px] flex items-center gap-2 transition-all"><i class="fas fa-pen"></i> تعديل الملف الشخصي</button>
+            <button class="bg-gray-200 dark:bg-dark-hover hover:bg-gray-300 dark:hover:bg-dark-active w-10 h-10 rounded-lg flex items-center justify-center transition-all"><i class="fas fa-ellipsis-h"></i></button>
+          </div>
+        </div>
+        <hr class="border-gray-300 dark:border-dark-border">
+        <div class="flex items-center gap-1 overflow-x-auto hide-scrollbar py-1">
+          <button class="px-4 py-3 text-brand-blue font-semibold border-b-[3px] border-brand-blue transition-all">المنشورات</button>
+          <button class="px-4 py-3 text-gray-500 dark:text-dark-secondary font-semibold hover:bg-gray-100 dark:hover:bg-dark-hover rounded-lg transition-all">نبذة</button>
+          <button class="px-4 py-3 text-gray-500 dark:text-dark-secondary font-semibold hover:bg-gray-100 dark:hover:bg-dark-hover rounded-lg transition-all">الأصدقاء</button>
+          <button class="px-4 py-3 text-gray-500 dark:text-dark-secondary font-semibold hover:bg-gray-100 dark:hover:bg-dark-hover rounded-lg transition-all">الصور</button>
+          <button class="px-4 py-3 text-gray-500 dark:text-dark-secondary font-semibold hover:bg-gray-100 dark:hover:bg-dark-hover rounded-lg transition-all">الفيديوهات</button>
+          <button class="px-4 py-3 text-gray-500 dark:text-dark-secondary font-semibold hover:bg-gray-100 dark:hover:bg-dark-hover rounded-lg transition-all">التحقق</button>
+          <button class="px-4 py-3 text-gray-500 dark:text-dark-secondary font-semibold hover:bg-gray-100 dark:hover:bg-dark-hover rounded-lg transition-all">المزيد <i class="fas fa-caret-down mr-1"></i></button>
+        </div>
+      </div>
+      <div class="flex flex-col md:flex-row gap-4 px-4 md:px-8 pb-8">
+        <div class="w-full md:w-[40%] space-y-4">
+          <div class="bg-white dark:bg-dark-card rounded-xl shadow-sm p-4 card-hover">
+            <h3 class="text-xl font-bold mb-3">نبذة</h3>
+            <div class="space-y-3 text-[15px]">
+              <div class="flex items-start gap-3"><i class="fas fa-briefcase text-gray-500 mt-1 w-5"></i><p>يعمل في <span class="font-semibold">حلول التقنية المتقدمة</span></p></div>
+              <div class="flex items-start gap-3"><i class="fas fa-graduation-cap text-gray-500 mt-1 w-5"></i><p>درس علوم الحاسب في <span class="font-semibold">جامعة القاهرة</span></p></div>
+              <div class="flex items-start gap-3"><i class="fas fa-home text-gray-500 mt-1 w-5"></i><p>يعيش في <span class="font-semibold">القاهرة، مصر</span></p></div>
+              <div class="flex items-start gap-3"><i class="fas fa-map-marker-alt text-gray-500 mt-1 w-5"></i><p>من <span class="font-semibold">الإسكندرية، مصر</span></p></div>
+              <div class="flex items-start gap-3"><i class="fas fa-heart text-gray-500 mt-1 w-5"></i><p>أعزب</p></div>
+            </div>
+            <button class="w-full mt-3 bg-gray-100 dark:bg-dark-hover hover:bg-gray-200 dark:hover:bg-dark-active py-2 rounded-lg font-semibold text-sm transition-all">تعديل التفاصيل</button>
+          </div>
+          <div class="bg-white dark:bg-dark-card rounded-xl shadow-sm p-4 card-hover">
+            <div class="flex justify-between items-center mb-3"><h3 class="text-xl font-bold">الصور</h3><a href="#" class="text-brand-blue hover:underline text-sm font-medium">عرض الكل</a></div>
+            <div class="grid grid-cols-3 gap-1">
+              <img src="https://picsum.photos/seed/p1/150/150" class="w-full aspect-square object-cover rounded-lg cursor-pointer hover:opacity-90 transition-opacity hover:scale-105">
+              <img src="https://picsum.photos/seed/p2/150/150" class="w-full aspect-square object-cover rounded-lg cursor-pointer hover:opacity-90 transition-opacity hover:scale-105">
+              <img src="https://picsum.photos/seed/p3/150/150" class="w-full aspect-square object-cover rounded-lg cursor-pointer hover:opacity-90 transition-opacity hover:scale-105">
+              <img src="https://picsum.photos/seed/p4/150/150" class="w-full aspect-square object-cover rounded-lg cursor-pointer hover:opacity-90 transition-opacity hover:scale-105">
+              <img src="https://picsum.photos/seed/p5/150/150" class="w-full aspect-square object-cover rounded-lg cursor-pointer hover:opacity-90 transition-opacity hover:scale-105">
+              <img src="https://picsum.photos/seed/p6/150/150" class="w-full aspect-square object-cover rounded-lg cursor-pointer hover:opacity-90 transition-opacity hover:scale-105">
+            </div>
+          </div>
+          <div class="bg-white dark:bg-dark-card rounded-xl shadow-sm p-4 card-hover">
+            <div class="flex justify-between items-center mb-3"><h3 class="text-xl font-bold">الأصدقاء</h3><a href="#" class="text-brand-blue hover:underline text-sm font-medium">عرض الكل</a></div>
+            <p class="text-sm text-gray-500 dark:text-dark-secondary mb-3">2,143 صديق</p>
+            <div class="grid grid-cols-3 gap-2">
+              <div class="cursor-pointer group"><img src="https://i.pravatar.cc/150?img=5" class="w-full aspect-square object-cover rounded-lg group-hover:opacity-90 transition-opacity"><p class="text-xs font-medium mt-1 truncate">عمر حسن</p></div>
+              <div class="cursor-pointer group"><img src="https://i.pravatar.cc/150?img=9" class="w-full aspect-square object-cover rounded-lg group-hover:opacity-90 transition-opacity"><p class="text-xs font-medium mt-1 truncate">ليلى مصطفى</p></div>
+              <div class="cursor-pointer group"><img src="https://i.pravatar.cc/150?img=12" class="w-full aspect-square object-cover rounded-lg group-hover:opacity-90 transition-opacity"><p class="text-xs font-medium mt-1 truncate">كريم عادل</p></div>
+              <div class="cursor-pointer group"><img src="https://i.pravatar.cc/150?img=20" class="w-full aspect-square object-cover rounded-lg group-hover:opacity-90 transition-opacity"><p class="text-xs font-medium mt-1 truncate">نور الدين</p></div>
+              <div class="cursor-pointer group"><img src="https://i.pravatar.cc/150?img=33" class="w-full aspect-square object-cover rounded-lg group-hover:opacity-90 transition-opacity"><p class="text-xs font-medium mt-1 truncate">ياسمين طارق</p></div>
+              <div class="cursor-pointer group"><img src="https://i.pravatar.cc/150?img=45" class="w-full aspect-square object-cover rounded-lg group-hover:opacity-90 transition-opacity"><p class="text-xs font-medium mt-1 truncate">حسن علي</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="w-full md:w-[60%] space-y-4">
+          <div class="bg-white dark:bg-dark-card rounded-xl shadow-sm p-4 card-hover">
+            <div class="flex gap-3 mb-3">
+              <img src="https://i.pravatar.cc/150?img=11" class="w-10 h-10 rounded-full object-cover ring-2 ring-brand-blue/20">
+              <div class="flex-1 bg-gray-100 dark:bg-dark-hover rounded-full px-4 py-2.5 cursor-pointer hover:bg-gray-200 dark:hover:bg-dark-active transition-all flex items-center"><span class="text-gray-500 dark:text-dark-secondary text-[15px]">بماذا تفكر؟</span></div>
+            </div>
+            <hr class="border-gray-200 dark:border-dark-border mb-3">
+            <div class="flex justify-between">
+              <button class="flex-1 flex items-center justify-center gap-2 py-2 hover:bg-gray-100 dark:hover:bg-dark-hover rounded-lg transition-all group"><i class="fas fa-video text-red-500 text-xl group-hover:scale-110 transition-transform"></i><span class="text-gray-500 dark:text-dark-secondary text-sm font-medium hidden sm:inline">بث مباشر</span></button>
+              <button class="flex-1 flex items-center justify-center gap-2 py-2 hover:bg-gray-100 dark:hover:bg-dark-hover rounded-lg transition-all group"><i class="fas fa-images text-green-500 text-xl group-hover:scale-110 transition-transform"></i><span class="text-gray-500 dark:text-dark-secondary text-sm font-medium hidden sm:inline">صور/فيديو</span></button>
+              <button class="flex-1 flex items-center justify-center gap-2 py-2 hover:bg-gray-100 dark:hover:bg-dark-hover rounded-lg transition-all group"><i class="fas fa-smile text-yellow-500 text-xl group-hover:scale-110 transition-transform"></i><span class="text-gray-500 dark:text-dark-secondary text-sm font-medium hidden sm:inline">شعور/نشاط</span></button>
+            </div>
+          </div>
+          <div class="flex items-center justify-between px-2">
+            <button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-dark-card rounded-lg shadow-sm font-semibold text-sm hover:bg-gray-50 transition-colors"><i class="fas fa-bars"></i> الفلاتر</button>
+            <button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-dark-card rounded-lg shadow-sm font-semibold text-sm hover:bg-gray-50 transition-colors"><i class="fas fa-cog"></i> إدارة المنشورات</button>
+          </div>
+          <div id="profilePosts" class="space-y-4"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SETTINGS PAGE ==================== -->
+  <div id="settingsPage" class="hidden pt-14 min-h-screen bg-brand-bg dark:bg-dark-bg page-transition">
+    <div class="max-w-[700px] mx-auto p-4">
+      <h2 class="text-2xl font-bold mb-6">الإعدادات والخصوصية</h2>
+      <div class="space-y-4">
+        <div class="bg-white dark:bg-dark-card rounded-xl shadow-sm overflow-hidden">
+          <div class="p-4 flex items-center gap-4 hover:bg-gray-50 dark:hover:bg-dark-hover cursor-pointer transition-colors border-b border-gray-100 dark:border-dark-border">
+            <div class="w-10 h-10 rounded-full bg-gray-100 dark:bg-dark-hover flex items-center justify-center"><i class="fas fa-user text-gray-700 dark:text-dark-text"></i></div>
+            <div class="flex-1"><p class="font-semibold text-[17px]">المعلومات الشخصية</p><p class="text-sm text-gray-500 dark:text-dark-secondary">تحديث اسمك ومعلومات الاتصال</p></div>
+            <i class="fas fa-chevron-left text-gray-400"></i>
+          </div>
+          <div class="p-4 flex items-center gap-4 hover:bg-gray-50 dark:hover:bg-dark-hover cursor-pointer transition-colors border-b border-gray-100 dark:border-dark-border">
+            <div class="w-10 h-10 rounded-full bg-gray-100 dark:bg-dark-hover flex items-center justify-center"><i class="fas fa-shield-alt text-gray-700 dark:text-dark-text"></i></div>
+            <div class="flex-1"><p class="font-semibold text-[17px]">كلمة السر والأمان</p><p class="text-sm text-gray-500 dark:text-dark-secondary">تغيير كلمة السر وتأمين حسابك</p></div>
+            <i class="fas fa-chevron-left text-gray-400"></i>
+          </div>
+          <div class="p-4 flex items-center gap-4 hover:bg-gray-50 dark:hover:bg-dark-hover cursor-pointer transition-colors border-b border-gray-100 dark:border-dark-border">
+            <div class="w-10 h-10 rounded-full bg-gray-100 dark:bg-dark-hover flex items-center justify-center"><i class="fas fa-lock text-gray-700 dark:text-dark-text"></i></div>
+            <div class="flex-1"><p class="font-semibold text-[17px]">الخصوصية</p><p class="text-sm text-gray-500 dark:text-dark-secondary">إدارة من يمكنه رؤية منشوراتك وملفك</p></div>
+            <i class="fas fa-chevron-left text-gray-400"></i>
+          </div>
+          <div class="p-4 flex items-center gap-4 hover:bg-gray-50 dark:hover:bg-dark-hover cursor-pointer transition-colors border-b border-gray-100 dark:border-dark-border">
+            <div class="w-10 h-10 rounded-full bg-gray-100 dark:bg-dark-hover flex items-center justify-center"><i class="fas fa-bell text-gray-700 dark:text-dark-text"></i></div>
+            <div class="flex-1"><p class="font-semibold text-[17px]">الإشعارات</p><p class="text-sm text-gray-500 dark:text-dark-secondary">اختر ما تريد أن تتلقى إشعارات بشأنه</p></div>
+            <i class="fas fa-chevron-left text-gray-400"></i>
+          </div>
+          <div onclick="toggleDarkMode()" class="p-4 flex items-center gap-4 hover:bg-gray-50 dark:hover:bg-dark-hover cursor-pointer transition-colors border-b border-gray-100 dark:border-dark-border">
+            <div class="w-10 h-10 rounded-full bg-gray-100 dark:bg-dark-hover flex items-center justify-center"><i class="fas fa-moon text-gray-700 dark:text-dark-text"></i></div>
+            <div class="flex-1"><p class="font-semibold text-[17px]">الوضع الليلي</p><p class="text-sm text-gray-500 dark:text-dark-secondary">التبديل بين الوضع الفاتح والداكن</p></div>
+            <div class="w-12 h-6 bg-gray-300 dark:bg-brand-blue rounded-full relative transition-colors"><div class="absolute top-0.5 right-0.5 w-5 h-5 bg-white rounded-full shadow-md transition-transform dark:translate-x-0 translate-x-6"></div></div>
+          </div>
+          <div class="p-4 flex items-center gap-4 hover:bg-gray-50 dark:hover:bg-dark-hover cursor-pointer transition-colors border-b border-gray-100 dark:border-dark-border">
+            <div class="w-10 h-10 rounded-full bg-gray-100 dark:bg-dark-hover flex items-center justify-center"><i class="fas fa-globe text-gray-700 dark:text-dark-text"></i></div>
+            <div class="flex-1"><p class="font-semibold text-[17px]">اللغة والمنطقة</p><p class="text-sm text-gray-500 dark:text-dark-secondary">العربية (الشرق الأوسط)</p></div>
+            <i class="fas fa-chevron-left text-gray-400"></i>
+          </div>
+          <div class="p-4 flex items-center gap-4 hover:bg-gray-50 dark:hover:bg-dark-hover cursor-pointer transition-colors">
+            <div class="w-10 h-10 rounded-full bg-gray-100 dark:bg-dark-hover flex items-center justify-center"><i class="fas fa-universal-access text-gray-700 dark:text-dark-text"></i></div>
+            <div class="flex-1"><p class="font-semibold text-[17px]">إمكانية الوصول</p><p class="text-sm text-gray-500 dark:text-dark-secondary">ضبط حجم النص والتباين</p></div>
+            <i class="fas fa-chevron-left text-gray-400"></i>
+          </div>
+        </div>
+        <div class="bg-white dark:bg-dark-card rounded-xl shadow-sm overflow-hidden">
+          <button onclick="showLogoutConfirm()" class="w-full p-4 flex items-center gap-4 hover:bg-gray-50 dark:hover:bg-dark-hover transition-colors text-right">
+            <div class="w-10 h-10 rounded-full bg-red-100 dark:bg-red-900/20 flex items-center justify-center"><i class="fas fa-sign-out-alt text-red-500"></i></div>
+            <span class="font-semibold text-[17px] text-red-500">تسجيل الخروج</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ==================== MODALS ==================== -->
+
+<!-- Create Post Modal -->
+<div id="createPostModal" class="fixed inset-0 bg-black/60 z-50 hidden items-center justify-center p-4 backdrop-blur-sm transition-all">
+  <div class="bg-white dark:bg-dark-card rounded-xl shadow-2xl max-w-[500px] w-full animate-scale-in max-h-[90vh] overflow-y-auto">
+    <div class="flex justify-between items-center p-4 border-b border-gray-200 dark:border-dark-border sticky top-0 bg-white dark:bg-dark-card z-10">
+      <h3 class="text-xl font-bold flex-1 text-center">إنشاء منشور</h3>
+      <button onclick="closeCreatePost()" class="w-9 h-9 rounded-full bg-gray-100 dark:bg-dark-hover hover:bg-gray-200 dark:hover:bg-dark-active flex items-center justify-center text-gray-500 transition-all hover:rotate-90"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="p-4">
+      <div class="flex items-center gap-3 mb-4">
+        <img src="https://i.pravatar.cc/150?img=11" class="w-10 h-10 rounded-full object-cover ring-2 ring-brand-blue/20">
+        <div>
+          <p class="font-semibold text-[15px]">أحمد خالد</p>
+          <div class="flex items-center gap-1 bg-gray-100 dark:bg-dark-hover rounded-md px-2 py-0.5 text-xs font-semibold cursor-pointer hover:bg-gray-200 transition-colors">
+            <i class="fas fa-user-friends text-[10px]"></i>
+            <span>الأصدقاء</span>
+            <i class="fas fa-caret-down text-[10px]"></i>
+          </div>
+        </div>
+      </div>
+      <textarea id="postContent" placeholder="بماذا تفكر، أحمد؟" class="w-full min-h-[120px] text-xl resize-none outline-none bg-transparent dark:text-dark-text placeholder-gray-400 dark:placeholder-dark-secondary leading-relaxed text-right"></textarea>
+      <div id="postFeelingDisplay" class="hidden mb-3 text-brand-blue font-medium text-sm flex items-center gap-2"><i class="fas fa-smile"></i> <span id="postFeelingText"></span></div>
+      <div id="postImagePreview" class="hidden mb-4 rounded-xl overflow-hidden border border-gray-200 dark:border-dark-border relative group">
+        <img src="" class="w-full max-h-[300px] object-cover">
+        <button onclick="removePostImage()" class="absolute top-2 left-2 w-8 h-8 bg-black/50 hover:bg-black/70 rounded-full text-white flex items-center justify-center transition-all hover:scale-110"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="border border-gray-200 dark:border-dark-border rounded-xl p-3 mb-4 flex items-center justify-between hover:border-brand-blue/30 transition-colors cursor-pointer">
+        <span class="text-sm font-medium">أضف إلى منشورك</span>
+        <div class="flex gap-1">
+          <button onclick="triggerFileUpload()" class="w-9 h-9 rounded-full hover:bg-gray-100 dark:hover:bg-dark-hover flex items-center justify-center text-green-500 transition-all hover:scale-110" title="صور/فيديو"><i class="fas fa-images text-xl"></i></button>
+          <button onclick="openFeelingPicker()" class="w-9 h-9 rounded-full hover:bg-gray-100 dark:hover:bg-dark-hover flex items-center justify-center text-yellow-500 transition-all hover:scale-110" title="شعور/نشاط"><i class="fas fa-smile text-xl"></i></button>
+          <button class="w-9 h-9 rounded-full hover:bg-gray-100 dark:hover:bg-dark-hover flex items-center justify-center text-blue-500 transition-all hover:scale-110" title="وسم أشخاص"><i class="fas fa-user-tag text-xl"></i></button>
+          <button class="w-9 h-9 rounded-full hover:bg-gray-100 dark:hover:bg-dark-hover flex items-center justify-center text-red-500 transition-all hover:scale-110" title="تحديد موقع"><i class="fas fa-map-marker-alt text-xl"></i></button>
+          <button class="w-9 h-9 rounded-full hover:bg-gray-100 dark:hover:bg-dark-hover flex items-center justify-center text-gray-500 transition-all hover:scale-110" title="المزيد"><i class="fas fa-ellipsis-h text-xl"></i></button>
+        </div>
+      </div>
+      <input type="file" id="postFileInput" accept="image/*,video/*" class="hidden" onchange="handlePostFileUpload(this)">
+      <button onclick="submitPost()" id="submitPostBtn" disabled class="w-full bg-brand-blue/50 text-white font-bold text-[15px] py-2.5 rounded-lg transition-all cursor-not-allowed">نشر</button>
+    </div>
+  </div>
+</div>
+
+<!-- Feeling Picker Modal -->
+<div id="feelingPickerModal" class="fixed inset-0 bg-black/40 z-50 hidden items-center justify-center p-4 backdrop-blur-sm">
+  <div class="bg-white dark:bg-dark-card rounded-xl shadow-2xl max-w-[400px] w-full animate-scale-in">
+    <div class="flex justify-between items-center p-4 border-b border-gray-200 dark:border-dark-border">
+      <h3 class="text-lg font-bold">كيف تشعر؟</h3>
+      <button onclick="closeFeelingPicker()" class="w-8 h-8 rounded-full hover:bg-gray-100 dark:hover:bg-dark-hover flex items-center justify-center text-gray-500"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="p-4 grid grid-cols-3 gap-2 max-h-[300px] overflow-y-auto">
+      <button onclick="selectFeeling('سعيد 😊')" class="p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-dark-hover transition-all text-center"><div class="text-2xl mb-1">😊</div><div class="text-sm font-medium">سعيد</div></button>
+      <button onclick="selectFeeling('متحمس 🤩')" class="p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-dark-hover transition-all text-center"><div class="text-2xl mb-1">🤩</div><div class="text-sm font-medium">متحمس</div></button>
+      <button onclick="selectFeeling('حزين 😢')" class="p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-dark-hover transition-all text-center"><div class="text-2xl mb-1">😢</div><div class="text-sm font-medium">حزين</div></button>
+      <button onclick="selectFeeling('غاضب 😠')" class="p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-dark-hover transition-all text-center"><div class="text-2xl mb-1">😠</div><div class="text-sm font-medium">غاضب</div></button>
+      <button onclick="selectFeeling('محبوب ❤️')" class="p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-dark-hover transition-all text-center"><div class="text-2xl mb-1">❤️</div><div class="text-sm font-medium">محبوب</div></button>
+      <button onclick="selectFeeling('ممتن 🙏')" class="p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-dark-hover transition-all text-center"><div class="text-2xl mb-1">🙏</div><div class="text-sm font-medium">ممتن</div></button>
+      <button onclick="selectFeeling('مرتاح 😌')" class="p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-dark-hover transition-all text-center"><div class="text-2xl mb-1">😌</div><div class="text-sm font-medium">مرتاح</div></button>
+      <button onclick="selectFeeling('فخور 🦚')" class="p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-dark-hover transition-all text-center"><div class="text-2xl mb-1">🦚</div><div class="text-sm font-medium">فخور</div></button>
+      <button onclick="selectFeeling('جائع 🍔')" class="p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-dark-hover transition-all text-center"><div class="text-2xl mb-1">🍔</div><div class="text-sm font-medium">جائع</div></button>
+    </div>
+  </div>
+</div>
+
+<!-- Create Story Modal -->
+<div id="createStoryModal" class="fixed inset-0 bg-black/80 z-50 hidden items-center justify-center p-4 backdrop-blur-sm">
+  <div class="bg-white dark:bg-dark-card rounded-xl shadow-2xl max-w-[400px] w-full animate-scale-in">
+    <div class="flex justify-between items-center p-4 border-b border-gray-200 dark:border-dark-border">
+      <h3 class="text-xl font-bold">إنشاء قصة</h3>
+      <button onclick="closeCreateStory()" class="w-9 h-9 rounded-full bg-gray-100 dark:bg-dark-hover hover:bg-gray-200 flex items-center justify-center text-gray-500 transition-all hover:rotate-90"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="p-6">
+      <div class="flex flex-col items-center gap-4">
+        <div class="w-20 h-20 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue text-3xl"><i class="fas fa-camera"></i></div>
+        <p class="text-center text-gray-500 dark:text-dark-secondary">اختر صورة لإنشاء قصة</p>
+        <input type="file" id="storyFileInput" accept="image/*" class="hidden" onchange="handleStoryUpload(this)">
+        <button onclick="document.getElementById('storyFileInput').click()" class="w-full bg-brand-blue hover:bg-brand-dark text-white font-bold py-2.5 rounded-lg transition-all btn-hover shadow-lg shadow-brand-blue/30">رفع صورة من الجهاز</button>
+        <div class="grid grid-cols-3 gap-2 w-full">
+          <img src="https://picsum.photos/seed/storynew1/100/150" onclick="createStoryFromUrl(this.src)" class="w-full aspect-[2/3] object-cover rounded-lg cursor-pointer hover:opacity-80 transition-opacity">
+          <img src="https://picsum.photos/seed/storynew2/100/150" onclick="createStoryFromUrl(this.src)" class="w-full aspect-[2/3] object-cover rounded-lg cursor-pointer hover:opacity-80 transition-opacity">
+          <img src="https://picsum.photos/seed/storynew3/100/150" onclick="createStoryFromUrl(this.src)" class="w-full aspect-[2/3] object-cover rounded-lg cursor-pointer hover:opacity-80 transition-opacity">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Story Viewer -->
+<div id="storyViewer" class="fixed inset-0 bg-black z-50 hidden items-center justify-center">
+  <div class="absolute top-0 left-0 right-0 h-1 bg-white/20 z-20 flex gap-1 p-1"><div id="storyProgressBar" class="h-full bg-white rounded-full transition-all duration-[5000ms] ease-linear w-0"></div></div>
+  <div class="absolute top-4 right-4 z-10 flex items-center gap-3 animate-fade-in">
+    <img id="storyAvatar" src="" class="w-10 h-10 rounded-full border-2 border-white/50 object-cover">
+    <div><span id="storyName" class="text-white font-semibold drop-shadow-lg block text-[15px]"></span><span id="storyTime" class="text-white/70 text-xs">2س</span></div>
+  </div>
+  <button onclick="closeStory()" class="absolute top-4 left-4 z-10 w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full text-white flex items-center justify-center backdrop-blur-md transition-all hover:scale-110"><i class="fas fa-times text-xl"></i></button>
+  <button onclick="prevStory()" class="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full text-white flex items-center justify-center backdrop-blur-md transition-all hover:scale-110 hidden md:flex"><i class="fas fa-chevron-right text-xl"></i></button>
+  <button onclick="nextStory()" class="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full text-white flex items-center justify-center backdrop-blur-md transition-all hover:scale-110 hidden md:flex"><i class="fas fa-chevron-left text-xl"></i></button>
+  <img id="storyImage" src="" class="max-w-full max-h-full object-contain animate-fade-in">
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+    <button class="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full text-white flex items-center justify-center backdrop-blur-md transition-all hover:scale-110"><i class="fas fa-heart"></i></button>
+    <div class="bg-white/10 backdrop-blur-md rounded-full flex items-center px-4 py-2"><input type="text" placeholder="رد..." class="bg-transparent text-white placeholder-white/50 outline-none text-sm w-[200px] text-right"></div>
+    <button class="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full text-white flex items-center justify-center backdrop-blur-md transition-all hover:scale-110"><i class="fas fa-paper-plane"></i></button>
+  </div>
+</div>
+
+<!-- Live Modal -->
+<div id="liveModal" class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center p-4 backdrop-blur-sm">
+  <div class="bg-white dark:bg-dark-card rounded-xl shadow-2xl max-w-[600px] w-full animate-scale-in overflow-hidden">
+    <div class="relative h-[300px] bg-gray-900 flex items-center justify-center">
+      <div class="text-center text-white">
+        <div class="w-20 h-20 rounded-full bg-red-500/20 flex items-center justify-center mx-auto mb-4 animate-pulse"><i class="fas fa-video text-red-500 text-3xl"></i></div>
+        <h3 class="text-xl font-bold mb-2">بدء بث مباشر</h3>
+        <p class="text-white/70 mb-4">شارك لحظاتك مع أصدقائك في الوقت الفعلي</p>
+        <div id="liveTimer" class="text-2xl font-mono font-bold mb-4 hidden">00:00:00</div>
+      </div>
+      <div id="liveOverlay" class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold animate-pulse hidden">مباشر</div>
+    </div>
+    <div class="p-4 flex justify-between items-center">
+      <div class="flex gap-2">
+        <button id="startLiveBtn" onclick="startLive()" class="px-6 py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg font-bold transition-all btn-hover">بدء البث</button>
+        <button id="endLiveBtn" onclick="endLive()" class="px-6 py-2 bg-gray-500 hover:bg-gray-600 text-white rounded-lg font-bold transition-all hidden">إنهاء البث</button>
+      </div>
+      <button onclick="closeLiveModal()" class="px-4 py-2 text-gray-500 hover:text-gray-700 transition-colors">إلغاء</button>
+    </div>
+  </div>
+</div>
+
+<!-- Create Room Modal -->
+<div id="createRoomModal" class="fixed inset-0 bg-black/60 z-50 hidden items-center justify-center p-4 backdrop-blur-sm">
+  <div class="bg-white dark:bg-dark-card rounded-xl shadow-2xl max-w-[400px] w-full animate-scale-in">
+    <div class="flex justify-between items-center p-4 border-b border-gray-200 dark:border-dark-border">
+      <h3 class="text-xl font-bold">إنشاء غرفة</h3>
+      <button onclick="closeCreateRoom()" class="w-9 h-9 rounded-full bg-gray-100 dark:bg-dark-hover hover:bg-gray-200 flex items-center justify-center text-gray-500 transition-all hover:rotate-90"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="p-4 space-y-4">
+      <div>
+        <label class="block text-sm font-medium mb-1">اسم الغرفة</label>
+        <input type="text" id="roomNameInput" placeholder="مثال: محادثة الأصدقاء" class="w-full px-3 py-2 rounded-lg border border-gray-300 dark:border-dark-border bg-white dark:bg-dark-hover focus:outline-none focus:ring-2 focus:ring-brand-blue/20 dark:text-dark-text text-right">
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-1">الصورة</label>
+        <div class="grid grid-cols-4 gap-2">
+          <div onclick="selectRoomImage('https://picsum.photos/seed/room1/100/100')" class="room-img-select w-full aspect-square rounded-lg bg-gradient-to-br from-blue-400 to-purple-500 cursor-pointer hover:scale-105 transition-transform ring-2 ring-transparent hover:ring-brand-blue"></div>
+          <div onclick="selectRoomImage('https://picsum.photos/seed/room2/100/100')" class="room-img-select w-full aspect-square rounded-lg bg-gradient-to-br from-green-400 to-blue-500 cursor-pointer hover:scale-105 transition-transform ring-2 ring-transparent hover:ring-brand-blue"></div>
+          <div onclick="selectRoomImage('https://picsum.photos/seed/room3/100/100')" class="room-img-select w-full aspect-square rounded-lg bg-gradient-to-br from-pink-400 to-red-500 cursor-pointer hover:scale-105 transition-transform ring-2 ring-transparent hover:ring-brand-blue"></div>
+          <div onclick="selectRoomImage('https://picsum.photos/seed/room4/100/100')" class="room-img-select w-full aspect-square rounded-lg bg-gradient-to-br from-yellow-400 to-orange-500 cursor-pointer hover:scale-105 transition-transform ring-2 ring-transparent hover:ring-brand-blue"></div>
+        </div>
+      </div>
+      <button onclick="createRoom()" class="w-full bg-brand-blue hover:bg-brand-dark text-white font-bold py-2.5 rounded-lg transition-all btn-hover shadow-lg shadow-brand-blue/30">إنشاء الغرفة</button>
+    </div>
+  </div>
+</div>
+
+<!-- Share Modal -->
+<div id="shareModal" class="fixed inset-0 bg-black/60 z-50 hidden items-center justify-center p-4 backdrop-blur-sm">
+  <div class="bg-white dark:bg-dark-card rounded-xl shadow-2xl max-w-[500px] w-full animate-scale-in">
+    <div class="flex justify-between items-center p-4 border-b border-gray-200 dark:border-dark-border">
+      <h3 class="text-xl font-bold">مشاركة المنشور</h3>
+      <button onclick="closeShareModal()" class="w-9 h-9 rounded-full bg-gray-100 dark:bg-dark-hover hover:bg-gray-200 flex items-center justify-center text-gray-500 transition-all hover:rotate-90"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="p-4">
+      <div class="flex gap-3 mb-4">
+        <img src="https://i.pravatar.cc/150?img=11" class="w-10 h-10 rounded-full object-cover">
+        <div class="flex-1"><textarea id="shareText" placeholder="اكتب تعليقاً..." class="w-full resize-none outline-none bg-transparent dark:text-dark-text text-right h-10"></textarea></div>
+      </div>
+      <div class="space-y-2 mb-4">
+        <button onclick="shareNow()" class="w-full flex items-center gap-3 p-3 hover:bg-gray-100 dark:hover:bg-dark-hover rounded-xl transition-colors text-right">
+          <div class="w-10 h-10 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue"><i class="fas fa-share"></i></div>
+          <div class="flex-1"><p class="font-semibold">مشاركة الآن</p><p class="text-xs text-gray-500">على جدولك الزمني</p></div>
+        </button>
+        <button class="w-full flex items-center gap-3 p-3 hover:bg-gray-100 dark:hover:bg-dark-hover rounded-xl transition-colors text-right">
+          <div class="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/20 flex items-center justify-center text-brand-blue"><i class="fab fa-facebook-messenger"></i></div>
+          <div class="flex-1"><p class="font-semibold">إرسال في المسنجر</p></div>
+        </button>
+        <button class="w-full flex items-center gap-3 p-3 hover:bg-gray-100 dark:hover:bg-dark-hover rounded-xl transition-colors text-right">
+          <div class="w-10 h-10 rounded-full bg-green-100 dark:bg-green-900/20 flex items-center justify-center text-green-500"><i class="fab fa-whatsapp"></i></div>
+          <div class="flex-1"><p class="font-semibold">مشاركة عبر واتساب</p></div>
+        </button>
+        <button onclick="copyLink()" class="w-full flex items-center gap-3 p-3 hover:bg-gray-100 dark:hover:bg-dark-hover rounded-xl transition-colors text-right">
+          <div class="w-10 h-10 rounded-full bg-gray-100 dark:bg-dark-hover flex items-center justify-center text-gray-500"><i class="fas fa-link"></i></div>
+          <div class="flex-1"><p class="font-semibold">نسخ الرابط</p></div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Post Menu Modal -->
+<div id="postMenuModal" class="fixed inset-0 bg-black/40 z-50 hidden items-center justify-center p-4 backdrop-blur-sm">
+  <div class="bg-white dark:bg-dark-card rounded-xl shadow-2xl max-w-[300px] w-full animate-scale-in">
+    <div class="p-2 space-y-1">
+      <button onclick="savePost()" class="w-full flex items-center gap-3 p-3 hover:bg-gray-100 dark:hover:bg-dark-hover rounded-xl transition-colors text-right"><i class="fas fa-bookmark text-gray-500"></i><span class="font-medium">حفظ المنشور</span></button>
+      <button onclick="hidePost()" class="w-full flex items-center gap-3 p-3 hover:bg-gray-100 dark:hover:bg-dark-hover rounded-xl transition-colors text-right"><i class="fas fa-eye-slash text-gray-500"></i><span class="font-medium">إخفاء المنشور</span></button>
+      <button onclick="reportPost()" class="w-full flex items-center gap-3 p-3 hover:bg-gray-100 dark:hover:bg-dark-hover rounded-xl transition-colors text-right"><i class="fas fa-flag text-gray-500"></i><span class="font-medium">إبلاغ</span></button>
+      <button onclick="deletePost()" class="w-full flex items-center gap-3 p-3 hover:bg-gray-100 dark:hover:bg-dark-hover rounded-xl transition-colors text-right"><i class="fas fa-trash text-red-500"></i><span class="font-medium text-red-500">حذف المنشور</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- Voice Call Overlay -->
+<div id="voiceCallOverlay" class="fixed inset-0 bg-gray-900 z-50 hidden items-center justify-center flex-col">
+  <div class="text-center text-white">
+    <img id="voiceCallAvatar" src="" class="w-24 h-24 rounded-full object-cover mx-auto mb-4 ring-4 ring-brand-blue/30 animate-pulse">
+    <h3 id="voiceCallName" class="text-2xl font-bold mb-2"></h3>
+    <p id="voiceCallStatus" class="text-white/70 mb-8">جاري الاتصال...</p>
+    <div id="voiceCallTimer" class="text-3xl font-mono font-bold mb-8 hidden">00:00</div>
+    <div class="flex gap-4 justify-center">
+      <button onclick="toggleMuteCall()" class="w-14 h-14 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-all hover:scale-110"><i class="fas fa-microphone text-xl"></i></button>
+      <button onclick="endVoiceCall()" class="w-14 h-14 rounded-full bg-red-500 hover:bg-red-600 flex items-center justify-center text-white transition-all hover:scale-110 animate-bounce-soft"><i class="fas fa-phone-slash text-xl"></i></button>
+    </div>
+  </div>
+</div>
+
+<!-- Video Call Overlay -->
+<div id="videoCallOverlay" class="fixed inset-0 bg-gray-900 z-50 hidden items-center justify-center flex-col">
+  <div class="relative w-full h-full">
+    <div class="absolute inset-0 bg-gradient-to-b from-gray-800 to-gray-900 flex items-center justify-center">
+      <div class="text-center text-white">
+        <img id="videoCallAvatar" src="" class="w-32 h-32 rounded-full object-cover mx-auto mb-4 ring-4 ring-brand-blue/30 animate-pulse">
+        <h3 id="videoCallName" class="text-2xl font-bold mb-2"></h3>
+        <p id="videoCallStatus" class="text-white/70 mb-4">جاري بدء مكالمة الفيديو...</p>
+        <div id="videoCallTimer" class="text-2xl font-mono font-bold mb-4 hidden">00:00</div>
+      </div>
+    </div>
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-4">
+      <button onclick="toggleVideoCamera()" class="w-14 h-14 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-all hover:scale-110"><i class="fas fa-video text-xl"></i></button>
+      <button onclick="toggleMuteCall()" class="w-14 h-14 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-all hover:scale-110"><i class="fas fa-microphone text-xl"></i></button>
+      <button onclick="endVideoCall()" class="w-14 h-14 rounded-full bg-red-500 hover:bg-red-600 flex items-center justify-center text-white transition-all hover:scale-110 animate-bounce-soft"><i class="fas fa-phone-slash text-xl"></i></button>
+    </div>
+    <div class="absolute top-4 right-4 w-32 h-24 bg-black/50 rounded-xl overflow-hidden border border-white/20">
+      <div class="w-full h-full flex items-center justify-center text-white/50 text-xs">كاميرتك</div>
+    </div>
+  </div>
+</div>
+
+<!-- Logout Confirm Modal -->
+<div id="logoutModal" class="fixed inset-0 bg-black/60 z-50 hidden items-center justify-center p-4 backdrop-blur-sm">
+  <div class="bg-white dark:bg-dark-card rounded-xl shadow-2xl max-w-[400px] w-full animate-scale-in p-6 text-center">
+    <div class="w-16 h-16 bg-red-100 dark:bg-red-900/20 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-sign-out-alt text-red-500 text-2xl"></i></div>
+    <h3 class="text-xl font-bold mb-2">تسجيل الخروج</h3>
+    <p class="text-gray-500 dark:text-dark-secondary mb-6">هل أنت متأكد أنك تريد تسجيل الخروج من حسابك؟</p>
+    <div class="flex gap-3">
+      <button onclick="confirmLogout()" class="flex-1 bg-red-500 hover:bg-red-600 text-white font-bold py-2.5 rounded-lg transition-all btn-hover">تسجيل الخروج</button>
+      <button onclick="closeLogoutModal()" class="flex-1 bg-gray-200 dark:bg-dark-hover hover:bg-gray-300 dark:hover:bg-dark-active font-bold py-2.5 rounded-lg transition-all">إلغاء</button>
+    </div>
+  </div>
+</div>
+
+<!-- Image Viewer -->
+<div id="imageViewerModal" class="fixed inset-0 bg-black/95 z-50 hidden items-center justify-center p-4 backdrop-blur-sm">
+  <button onclick="closeImageViewer()" class="absolute top-4 right-4 w-10 h-10 bg-white/20 hover:bg-white/30 rounded-full text-white flex items-center justify-center transition-colors"><i class="fas fa-times text-xl"></i></button>
+  <img id="viewerImage" src="" class="max-w-full max-h-[90vh] object-contain rounded-lg animate-scale-in">
+</div>
+
+<!-- Toast -->
+<div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-gray-800/90 backdrop-blur-md text-white px-6 py-3 rounded-xl shadow-2xl transform translate-y-20 opacity-0 transition-all duration-300 z-50 font-medium flex items-center gap-2">
+  <i class="fas fa-check-circle text-green-400"></i>
+  <span id="toastMessage">إشعار</span>
+</div>
+
+<!-- ==================== JAVASCRIPT ==================== -->
+<script>
+// ==================== DATA ====================
+const currentUser = { name: 'أحمد خالد', avatar: 'https://i.pravatar.cc/150?img=11', cover: 'https://picsum.photos/seed/cover/900/400' };
+
+let posts = [
+  { id: 1, author: 'عمر حسن', avatar: 'https://i.pravatar.cc/150?img=5', time: 'منذ ساعتين', content: 'وصلت للإسكندرية! الجو رائع جداً اليوم. لا شيء يضاهي نسيم البحر المتوسط. 🌊☀️', image: 'https://picsum.photos/seed/post1/600/400', likes: 234, comments: [{ author: 'ليلى مصطفى', avatar: 'https://i.pravatar.cc/150?img=9', text: 'استمتع بوقتك! المأكولات البحرية هناك لا تُقاوم 🌴🦐', time: '1س' }, { author: 'كريم عادل', avatar: 'https://i.pravatar.cc/150?img=12', text: 'حظ سعيد! استمتع والتقط الكثير من الصور.', time: '45د' }], shares: 12, liked: false, reaction: null, likedBy: ['سارة أحمد', 'محمد علي', 'أنت'] },
+  { id: 2, author: 'ليلى مصطفى', avatar: 'https://i.pravatar.cc/150?img=9', time: 'منذ 5 ساعات', content: 'أخيراً انتهيت من مشروعي الجديد بعد 3 أشهر من العمل الجاد! 🚀 متحمسة جداً لمشاركته مع الجميع. أحياناً تستحق الليالي المتأخرة والقهوة كل جهد. لا تستسلموا أبداً! ✨', image: 'https://picsum.photos/seed/post2/600/400', likes: 567, comments: [{ author: 'أحمد خالد', avatar: 'https://i.pravatar.cc/150?img=11', text: 'تهانينا! هذا عمل رائع! 🎉👏', time: '4س' }, { author: 'عمر حسن', avatar: 'https://i.pravatar.cc/150?img=5', text: 'فخور بك! استمري في التألق ✨', time: '3س' }], shares: 45, liked: true, reaction: 'love', likedBy: ['أنت', 'عمر حسن', 'كريم عادل', 'نور الدين'] },
+  { id: 3, author: 'أخبار التقنية', avatar: 'https://i.pravatar.cc/150?img=60', time: 'منذ 8 ساعات', content: 'عاجل: نموذج ذكاء اصطناعي جديد يحقق 99% دقة في التشخيص الطبي. هذا قد يحدث ثورة في الرعاية الصحية. مستقبل التقنية هنا! ما رأيكم؟ 🤖🏥💡', image: null, likes: 1205, comments: [{ author: 'نور الدين', avatar: 'https://i.pravatar.cc/150?img=20', text: 'هذا مذهل! المستقبل هنا ويبدو مشرقاً.', time: '6س' }, { author: 'ياسمين طارق', avatar: 'https://i.pravatar.cc/150?img=33', text: 'أتمنى أن يصبح متاحاً للجميع حول العالم.', time: '5س' }, { author: 'عمر حسن', avatar: 'https://i.pravatar.cc/150?img=5', text: 'تقدم مذهل! التقنية لا تتوقف عن الإبهار 🙌', time: '3س' }], shares: 892, liked: false, reaction: null, likedBy: ['سارة أحمد', 'محمد علي', 'نور الدين', 'ياسمين طارق', 'كريم عادل'] },
+  { id: 4, author: 'كريم عادل', avatar: 'https://i.pravatar.cc/150?img=12', time: 'أمس', content: 'لا شيء يضاهي كتاباً جيداً وكوب قهوة في يوم ممطر. ☕📚 أحياناً اللحظات البسيطة هي الأكثر ثمناً. ما الذي تقرأونه هذه الأيام؟', image: 'https://picsum.photos/seed/post4/600/400', likes: 89, comments: [], shares: 3, liked: false, reaction: null, likedBy: ['ليلى مصطفى'] },
+  { id: 5, author: 'ياسمين طارق', avatar: 'https://i.pravatar.cc/150?img=33', time: 'منذ 3 ساعات', content: 'مجرد أفكار صباحية... الحياة قصيرة جداً لنقضيها في القلق. استمتعوا بكل لحظة! 🌸✨ #صباح_الخير #تفاؤل', image: 'https://picsum.photos/seed/post5/600/400', likes: 342, comments: [{ author: 'سارة أحمد', avatar: 'https://i.pravatar.cc/150?img=32', text: 'صباح النور والتفاؤل! 🌞', time: '2س' }, { author: 'حسن علي', avatar: 'https://i.pravatar.cc/150?img=45', text: 'كلام جميل جداً، شكراً للتذكير', time: '1س' }], shares: 28, liked: false, reaction: null, likedBy: ['نور الدين', 'محمد علي'] },
+  { id: 6, author: 'نور الدين', avatar: 'https://i.pravatar.cc/150?img=20', time: 'منذ 6 ساعات', content: 'شاركوا هذا المنشور إذا كنتم تحبون القطط! 🐱❤️ قطتي "لولو" اليوم قررت أن تكون نجمة الانستغرام. ما رأيكم في جمالها؟', image: 'https://picsum.photos/seed/post6/600/400', likes: 876, comments: [{ author: 'ليلى مصطفى', avatar: 'https://i.pravatar.cc/150?img=9', text: 'يا إلهي! لولو جميلة جداً 😍', time: '4س' }, { author: 'عمر حسن', avatar: 'https://i.pravatar.cc/150?img=5', text: 'أحب القطط كثيراً! شكراً على المشاركة', time: '3س' }, { author: 'ياسمين طارق', avatar: 'https://i.pravatar.cc/150?img=33', text: 'تستحق كل الحب 🐾❤️', time: '2س' }], shares: 156, liked: true, reaction: 'love', likedBy: ['أنت', 'سارة أحمد', 'كريم عادل', 'حسن علي'] },
+  { id: 7, author: 'حسن علي', avatar: 'https://i.pravatar.cc/150?img=45', time: 'منذ 4 ساعات', content: 'انتهيت اليوم من تمرين رياضي مكثف! 💪🏃‍♂️ الشعور بعد التمرين لا يُوصف. من يحب الرياضة هنا؟', image: 'https://picsum.photos/seed/post7/600/400', likes: 198, comments: [{ author: 'أحمد خالد', avatar: 'https://i.pravatar.cc/150?img=11', text: 'أنا! أحب الجري كل صباح 🏃', time: '2س' }], shares: 8, liked: false, reaction: null, likedBy: ['عمر حسن'] },
+  { id: 8, author: 'سارة أحمد', avatar: 'https://i.pravatar.cc/150?img=32', time: 'منذ ساعة واحدة', content: 'وجبة الغداء اليوم كانت رائعة! 🍕🥗 جربت مطعماً جديداً في وسط البلد والطعم كان خرافياً. أنصحكم جميعاً بتجربته.', image: 'https://picsum.photos/seed/post8/600/400', likes: 445, comments: [{ author: 'كريم عادل', avatar: 'https://i.pravatar.cc/150?img=12', text: 'ما اسم المطعم؟ أريد أن أجربه!', time: '30د' }, { author: 'ياسمين طارق', avatar: 'https://i.pravatar.cc/150?img=33', text: 'يبدو شهياً جداً! 🤤', time: '15د' }], shares: 34, liked: false, reaction: null, likedBy: ['ليلى مصطفى', 'نور الدين', 'حسن علي'] }
+];
+
+let stories = [
+  { id: 1, name: 'عمر حسن', avatar: 'https://i.pravatar.cc/150?img=5', image: 'https://picsum.photos/seed/story1/400/600', viewed: false },
+  { id: 2, name: 'ليلى مصطفى', avatar: 'https://i.pravatar.cc/150?img=9', image: 'https://picsum.photos/seed/story2/400/600', viewed: false },
+  { id: 3, name: 'كريم عادل', avatar: 'https://i.pravatar.cc/150?img=12', image: 'https://picsum.photos/seed/story3/400/600', viewed: true },
+  { id: 4, name: 'نور الدين', avatar: 'https://i.pravatar.cc/150?img=20', image: 'https://picsum.photos/seed/story4/400/600', viewed: false },
+  { id: 5, name: 'ياسمين طارق', avatar: 'https://i.pravatar.cc/150?img=33', image: 'https://picsum.photos/seed/story5/400/600', viewed: true },
+  { id: 6, name: 'حسن علي', avatar: 'https://i.pravatar.cc/150?img=45', image: 'https://picsum.photos/seed/story6/400/600', viewed: false },
+  { id: 7, name: 'سارة أحمد', avatar: 'https://i.pravatar.cc/150?img=32', image: 'https://picsum.photos/seed/story7/400/600', viewed: false },
+  { id: 8, name: 'محمد علي', avatar: 'https://i.pravatar.cc/150?img=15', image: 'https://picsum.photos/seed/story8/400/600', viewed: true }
+];
+
+let contacts = [
+  { name: 'عمر حسن', avatar: 'https://i.pravatar.cc/150?img=5', online: true },
+  { name: 'ليلى مصطفى', avatar: 'https://i.pravatar.cc/150?img=9', online: true },
+  { name: 'كريم عادل', avatar: 'https://i.pravatar.cc/150?img=12', online: false },
+  { name: 'نور الدين', avatar: 'https://i.pravatar.cc/150?img=20', online: true },
+  { name: 'ياسمين طارق', avatar: 'https://i.pravatar.cc/150?img=33', online: true },
+  { name: 'حسن علي', avatar: 'https://i.pravatar.cc/150?img=45', online: false },
+  { name: 'سارة أحمد', avatar: 'https://i.pravatar.cc/150?img=32', online: true },
+  { name: 'محمد علي', avatar: 'https://i.pravatar.cc/150?img=15', online: false }
+];
+
+let notifications = [
+  { id: 1, name: 'سارة أحمد', avatar: 'https://i.pravatar.cc/150?img=32', action: 'أعجب بصورتك', time: 'منذ ساعتين', read: false, type: 'like' },
+  { id: 2, name: 'محمد علي', avatar: 'https://i.pravatar.cc/150?img=15', action: 'تفاعل مع منشورك', time: 'منذ 5 ساعات', read: false, type: 'love' },
+  { id: 3, name: 'عمر حسن', avatar: 'https://i.pravatar.cc/150?img=5', action: 'علق على صورتك', time: 'منذ 8 ساعات', read: true, type: 'comment' },
+  { id: 4, name: 'ليلى مصطفى', avatar: 'https://i.pravatar.cc/150?img=9', action: 'شاركت منشورك', time: 'أمس', read: true, type: 'share' },
+  { id: 5, name: 'مطورو القاهرة', avatar: 'https://picsum.photos/seed/group1/40/40', action: 'منشور جديد: "اجتماع الجمعة"', time: 'منذ يومين', read: true, type: 'group' },
+  { id: 6, name: 'ياسمين طارق', avatar: 'https://i.pravatar.cc/150?img=33', action: 'أرسلت طلب صداقة', time: 'منذ 3 ساعات', read: false, type: 'like' },
+  { id: 7, name: 'حسن علي', avatar: 'https://i.pravatar.cc/150?img=45', action: 'ذكرك في تعليق', time: 'منذ 4 ساعات', read: false, type: 'comment' }
+];
+
+let messengerConversations = [
+  { id: 1, name: 'عمر حسن', avatar: 'https://i.pravatar.cc/150?img=5', message: 'مرحباً! هل ما زلنا نلتقي اليوم؟', time: '2د', unread: true, online: true, messages: [{ sender: 'other', text: 'مرحباً! هل ما زلنا نلتقي اليوم؟', time: '2:30 م' }] },
+  { id: 2, name: 'ليلى مصطفى', avatar: 'https://i.pravatar.cc/150?img=9', message: 'أرسلت صورة • 1س', time: '1س', unread: false, online: true, messages: [{ sender: 'other', text: 'انظر إلى هذه الصورة الجميلة!', time: '1:00 م' }] },
+  { id: 3, name: 'كريم عادل', avatar: 'https://i.pravatar.cc/150?img=12', message: 'شكراً على المساعدة! • 2ي', time: '2ي', unread: false, online: false, messages: [{ sender: 'other', text: 'شكراً جزيلاً على مساعدتك!', time: 'أمس' }] },
+  { id: 4, name: 'سارة أحمد', avatar: 'https://i.pravatar.cc/150?img=32', message: 'هل يمكنك إرسال الملفات؟', time: '3س', unread: true, online: true, messages: [] },
+  { id: 5, name: 'نور الدين', avatar: 'https://i.pravatar.cc/150?img=20', message: 'عيد ميلاد سعيد! 🎉', time: '1ي', unread: false, online: true, messages: [{ sender: 'other', text: 'عيد ميلاد سعيد! 🎉🎂', time: '12:00 ص' }] },
+  { id: 6, name: 'ياسمين طارق', avatar: 'https://i.pravatar.cc/150?img=33', message: 'أحببت منشورك الأخير جداً 💕', time: '5د', unread: true, online: true, messages: [{ sender: 'other', text: 'أحببت منشورك الأخير جداً 💕', time: '10:00 ص' }] }
+];
+
+let rooms = [
+  { id: 1, name: 'محادثة الأصدقاء', image: 'https://picsum.photos/seed/room1/100/100', members: 5, active: true },
+  { id: 2, name: 'ليلة ألعاب', image: 'https://picsum.photos/seed/room2/100/100', members: 12, active: true },
+  { id: 3, name: 'دراسة جماعية', image: 'https://picsum.photos/seed/room3/100/100', members: 3, active: false },
+  { id: 4, name: 'موسيقى وهدوء', image: 'https://picsum.photos/seed/room4/100/100', members: 8, active: true },
+  { id: 5, name: 'صباح التفاؤل', image: 'https://picsum.photos/seed/room5/100/100', members: 15, active: true }
+];
+
+let reels = [
+  { id: 1, author: 'عمر حسن', avatar: 'https://i.pravatar.cc/150?img=5', video: 'https://picsum.photos/seed/reel1/400/700', likes: 1200, comments: 45, caption: 'يوم رائع في الإسكندرية! 🌊' },
+  { id: 2, author: 'ليلى مصطفى', avatar: 'https://i.pravatar.cc/150?img=9', video: 'https://picsum.photos/seed/reel2/400/700', likes: 3400, comments: 120, caption: 'وراء الكواليس 🎬✨' },
+  { id: 3, author: 'كريم عادل', avatar: 'https://i.pravatar.cc/150?img=12', video: 'https://picsum.photos/seed/reel3/400/700', likes: 890, comments: 23, caption: 'وصفة جديدة 👨‍🍳' },
+  { id: 4, author: 'نور الدين', avatar: 'https://i.pravatar.cc/150?img=20', video: 'https://picsum.photos/seed/reel4/400/700', likes: 5600, comments: 340, caption: 'قطتي لولو تلعب! 🐱' },
+  { id: 5, author: 'ياسمين طارق', avatar: 'https://i.pravatar.cc/150?img=33', video: 'https://picsum.photos/seed/reel5/400/700', likes: 2100, comments: 67, caption: 'نصائح للصباح 🌸' }
+];
+
+let latestNews = [
+  { title: 'إطلاق هاتف ذكي قابل للطي بسعر مذهل', source: 'التقنية اليوم', time: 'منذ 10 دقائق', img: 'https://picsum.photos/seed/news1/60/60' },
+  { title: 'منتخب مصر يفوز بثلاثية في تصفيات كأس العالم', source: 'أخبار الرياضة', time: 'منذ 30 دقيقة', img: 'https://picsum.photos/seed/news2/60/60' },
+  { title: 'اكتشاف بحرية أثرية تعود للعصر الفرعوني', source: 'الآثار والتاريخ', time: 'منذ ساعة', img: 'https://picsum.photos/seed/news3/60/60' },
+  { title: 'أسعار الذهب تسجل ارتفاعاً غير مسبوق', source: 'الاقتصاد', time: 'منذ ساعتين', img: 'https://picsum.photos/seed/news4/60/60' }
+];
+
+let trendingTopics = [
+  { tag: '#كأس_العالم_2026', posts: '125K منشور' },
+  { tag: '#الذكاء_الاصطناعي', posts: '89K منشور' },
+  { tag: '#مصر_الجميلة', posts: '56K منشور' },
+  { tag: '#تطوير_الذات', posts: '34K منشور' },
+  { tag: '#برمجة', posts: '28K منشور' }
+];
+
+let currentStoryIndex = 0;
+let currentPage = 'home';
+let darkMode = false;
+let postImageData = null;
+let postFeeling = null;
+let selectedRoomImage = null;
+let currentChatId = null;
+let activeCallTimer = null;
+let sharePostId = null;
+let postMenuId = null;
+let lang = 'ar';
+
+// ==================== LOGIN ====================
+function login() {
+  const email = document.getElementById('loginEmail').value;
+  const password = document.getElementById('loginPassword').value;
+  if (email && password) {
+    document.getElementById('loginPage').classList.add('hidden');
+    document.getElementById('mainApp').classList.remove('hidden');
+    document.getElementById('mainApp').classList.add('block');
+    initApp();
+    showToast('مرحباً بعودتك، أحمد! 👋');
+  } else {
+    showToast('الرجاء إدخال البريد وكلمة السر');
+  }
+}
+
+function showCreateAccount() {
+  const modal = document.getElementById('createAccountModal');
+  modal.classList.remove('hidden');
+  modal.classList.add('flex');
+}
+
+function hideCreateAccount() {
+  const modal = document.getElementById('createAccountModal');
+  modal.classList.add('hidden');
+  modal.classList.remove('flex');
+}
+
+function signup() {
+  hideCreateAccount();
+  document.getElementById('loginPage').classList.add('hidden');
+  document.getElementById('mainApp').classList.remove('hidden');
+  document.getElementById('mainApp').classList.add('block');
+  initApp();
+  showToast('تم إنشاء الحساب بنجاح! 🎉');
+}
+
+function showLogoutConfirm() {
+  document.getElementById('logoutModal').classList.remove('hidden');
+  document.getElementById('logoutModal').classList.add('flex');
+}
+
+function closeLogoutModal() {
+  document.getElementById('logoutModal').classList.add('hidden');
+  document.getElementById('logoutModal').classList.remove('flex');
+}
+
+function confirmLogout() {
+  closeLogoutModal();
+  localStorage.clear();
+  location.reload();
+}
+
+// ==================== INIT APP ====================
+function initApp() {
+  renderStories();
+  renderPosts();
+  renderContacts();
+  renderNotifications();
+  renderMessengerList();
+  renderRooms();
+  renderShortcuts();
+  renderSponsored();
+  renderLatestNews();
+  renderTrending();
+  renderWatchVideos();
+  renderMarketplaceItems();
+  renderGroups();
+  renderGames();
+  renderReels();
+  loadFromStorage();
+}
+
+function loadFromStorage() {
+  const savedPosts = localStorage.getItem('posts');
+  const savedStories = localStorage.getItem('stories');
+  const savedRooms = localStorage.getItem('rooms');
+  if (savedPosts) { posts = JSON.parse(savedPosts); renderPosts(); }
+  if (savedStories) { stories = JSON.parse(savedStories); renderStories(); }
+  if (savedRooms) { rooms = JSON.parse(savedRooms); renderRooms(); }
+}
+
+function saveToStorage() {
+  localStorage.setItem('posts', JSON.stringify(posts));
+  localStorage.setItem('stories', JSON.stringify(stories));
+  localStorage.setItem('rooms', JSON.stringify(rooms));
+}
+
+// ==================== NAVIGATION ====================
+function navigateTo(page) {
+  const pages = ['homePage', 'messengerPage', 'profilePage', 'settingsPage', 'watchPage', 'marketplacePage', 'groupsPage', 'gamingPage', 'roomsPage', 'reelsPage'];
+  pages.forEach(p => {
+    document.getElementById(p).classList.add('hidden');
+    document.getElementById(p).classList.remove('block');
+  });
+  
+  document.querySelectorAll('.nav-btn').forEach(btn => {
+    btn.classList.remove('text-brand-blue', 'border-b-[3px]', 'border-brand-blue');
+    btn.classList.add('text-gray-500', 'dark:text-dark-secondary');
+  });
+  
+  currentPage = page;
+  
+  const pageMap = { 'home': 'homePage', 'messenger': 'messengerPage', 'profile': 'profilePage', 'settings': 'settingsPage', 'watch': 'watchPage', 'marketplace': 'marketplacePage', 'groups': 'groupsPage', 'gaming': 'gamingPage', 'rooms': 'roomsPage', 'reels': 'reelsPage' };
+  const navMap = { 'home': 'nav-home', 'watch': 'nav-watch', 'marketplace': 'nav-marketplace', 'groups': 'nav-groups', 'gaming': 'nav-gaming', 'reels': 'nav-reels' };
+  
+  if (pageMap[page]) {
+    document.getElementById(pageMap[page]).classList.remove('hidden');
+    document.getElementById(pageMap[page]).classList.add('block');
+  }
+  
+  if (navMap[page]) {
+    const btn = document.getElementById(navMap[page]);
+    btn.classList.add('text-brand-blue', 'border-b-[3px]', 'border-brand-blue');
+    btn.classList.remove('text-gray-500', 'dark:text-dark-secondary');
+  }
+  
+  if (page === 'profile') renderProfilePosts();
+  if (page === 'messenger') renderMessengerList();
+  
+  document.getElementById('accountMenuDropdown').classList.add('hidden');
+  document.getElementById('notificationsDropdown').classList.add('hidden');
+  
+  window.scrollTo(0, 0);
+}
+
+function openMessenger() {
+  navigateTo('messenger');
+}
+
+// ==================== STORIES ====================
+function renderStories() {
+  const container = document.getElementById('storiesContainer');
+  container.innerHTML = stories.map((story, index) => `
+    <div class="relative flex-shrink-0 w-[110px] h-[200px] rounded-xl overflow-hidden cursor-pointer group shadow-md hover:shadow-xl transition-all duration-300 ${story.viewed ? 'opacity-80' : ''}" onclick="viewStory(${index})">
+      <div class="absolute inset-0 ${story.viewed ? 'story-ring-viewed' : 'story-ring'} p-[3px] rounded-xl">
+        <div class="w-full h-full rounded-xl overflow-hidden bg-white dark:bg-dark-card">
+          <img src="${story.image}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        </div>
+      </div>
+      <div class="absolute top-2 right-2 w-9 h-9 rounded-full border-2 ${story.viewed ? 'border-gray-400' : 'border-brand-blue'} overflow-hidden z-10 bg-white">
+        <img src="${story.avatar}" class="w-full h-full object-cover">
+      </div>
+      <span class="absolute bottom-2 right-2 left-2 text-white text-xs font-semibold z-10 drop-shadow-md truncate text-center">${story.name}</span>
+    </div>
+  `).join('');
+}
+
+function openCreateStory() {
+  document.getElementById('createStoryModal').classList.remove('hidden');
+  document.getElementById('createStoryModal').classList.add('flex');
+}
+
+function closeCreateStory() {
+  document.getElementById('createStoryModal').classList.add('hidden');
+  document.getElementById('createStoryModal').classList.remove('flex');
+}
+
+function handleStoryUpload(input) {
+  if (input.files && input.files[0]) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      createStoryFromUrl(e.target.result);
+    };
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
+function createStoryFromUrl(imageSrc) {
+  closeCreateStory();
+  stories.unshift({
+    id: Date.now(),
+    name: currentUser.name,
+    avatar: currentUser.avatar,
+    image: imageSrc,
+    viewed: false
+  });
+  renderStories();
+  saveToStorage();
+  showToast('تم إنشاء القصة! 🎉');
+}
+
+let storyTimeout;
+function viewStory(index) {
+  currentStoryIndex = index;
+  const story = stories[index];
+  story.viewed = true;
+  renderStories();
+  
+  const viewer = document.getElementById('storyViewer');
+  viewer.classList.remove('hidden');
+  viewer.classList.add('flex');
+  
+  document.getElementById('storyAvatar').src = story.avatar;
+  document.getElementById('storyName').textContent = story.name;
+  document.getElementById('storyImage').src = story.image;
+  
+  const progressBar = document.getElementById('storyProgressBar');
+  progressBar.style.width = '0%';
+  setTimeout(() => { progressBar.style.width = '100%'; }, 50);
+  
+  clearTimeout(storyTimeout);
+  storyTimeout = setTimeout(() => { nextStory(); }, 5000);
+}
+
+function closeStory() {
+  clearTimeout(storyTimeout);
+  document.getElementById('storyViewer').classList.add('hidden');
+  document.getElementById('storyViewer').classList.remove('flex');
+}
+
+function nextStory() {
+  if (currentStoryIndex < stories.length - 1) viewStory(currentStoryIndex + 1);
+  else closeStory();
+}
+
+function prevStory() {
+  if (currentStoryIndex > 0) viewStory(currentStoryIndex - 1);
+}
+
+// ==================== ROOMS ====================
+function renderRooms() {
+  const container = document.getElementById('roomsList');
+  const roomsHTML = rooms.map(room => `
+    <div class="flex-shrink-0 flex items-center gap-2 px-4 py-2 bg-white dark:bg-dark-card rounded-full cursor-pointer hover:bg-gray-50 dark:hover:bg-dark-hover transition-all border border-gray-200 dark:border-dark-border shadow-sm">
+      <div class="relative">
+        <img src="${room.image}" class="w-8 h-8 rounded-full object-cover">
+        ${room.active ? '<div class="absolute -bottom-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-white dark:border-dark-card"></div>' : ''}
+      </div>
+      <div>
+        <span class="font-semibold text-sm block leading-tight">${room.name}</span>
+        <span class="text-xs text-gray-500">${room.members} متواجدين</span>
+      </div>
+    </div>
+  `).join('');
+  container.innerHTML = `
+    <div class="flex-shrink-0 flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-dark-hover rounded-full cursor-pointer hover:bg-gray-200 transition-all border border-gray-300 dark:border-dark-border" onclick="openCreateRoom()">
+      <div class="w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600"><i class="fas fa-video text-sm"></i></div>
+      <span class="font-semibold text-sm">إنشاء غرفة</span>
+    </div>
+    ${roomsHTML}
+  `;
+  
+  const pageContainer = document.getElementById('roomsPageList');
+  if (pageContainer) {
+    pageContainer.innerHTML = rooms.map(room => `
+      <div class="bg-white dark:bg-dark-card rounded-xl shadow-sm p-4 card-hover cursor-pointer">
+        <div class="flex items-center gap-4">
+          <img src="${room.image}" class="w-16 h-16 rounded-xl object-cover">
+          <div class="flex-1">
+            <h3 class="font-bold text-lg">${room.name}</h3>
+            <p class="text-sm text-gray-500 dark:text-dark-secondary">${room.members} أعضاء متواجدين</p>
+            <div class="flex gap-2 mt-2">
+              <span class="px-2 py-1 bg-green-100 dark:bg-green-900/20 text-green-600 rounded text-xs font-medium">${room.active ? 'نشطة' : 'غير نشطة'}</span>
+            </div>
+          </div>
+          <button class="px-4 py-2 bg-brand-blue text-white rounded-lg text-sm font-semibold hover:bg-brand-dark transition-colors">انضمام</button>
+        </div>
+      </div>
+    `).join('');
+  }
+}
+
+function openCreateRoom() {
+  document.getElementById('createRoomModal').classList.remove('hidden');
+  document.getElementById('createRoomModal').classList.add('flex');
+}
+
+function closeCreateRoom() {
+  document.getElementById('createRoomModal').classList.add('hidden');
+  document.getElementById('createRoomModal').classList.remove('flex');
+  selectedRoomImage = null;
+  document.getElementById('roomNameInput').value = '';
+  document.querySelectorAll('.room-img-select').forEach(el => el.classList.remove('ring-2', 'ring-brand-blue'));
+}
+
+function selectRoomImage(url) {
+  selectedRoomImage = url;
+  document.querySelectorAll('.room-img-select').forEach(el => el.classList.remove('ring-2', 'ring-brand-blue'));
+  event.target.classList.add('ring-2', 'ring-brand-blue');
+}
+
+function createRoom() {
+  const name = document.getElementById('roomNameInput').value.trim();
+  if (!name) { showToast('الرجاء إدخال اسم الغرفة'); return; }
+  if (!selectedRoomImage) selectedRoomImage = 'https://picsum.photos/seed/room' + Date.now() + '/100/100';
+  
+  rooms.unshift({ id: Date.now(), name: name, image: selectedRoomImage, members: 1, active: true });
+  renderRooms();
+  saveToStorage();
+  closeCreateRoom();
+  showToast('تم إنشاء الغرفة بنجاح! 🎉');
+}
+
+// ==================== LIVE ====================
+function openLiveModal() {
+  document.getElementById('liveModal').classList.remove('hidden');
+  document.getElementById('liveModal').classList.add('flex');
+}
+
+function closeLiveModal() {
+  document.getElementById('liveModal').classList.add('hidden');
+  document.getElementById('liveModal').classList.remove('flex');
+  endLive();
+}
+
+let liveInterval;
+function startLive() {
+  document.getElementById('startLiveBtn').classList.add('hidden');
+  document.getElementById('endLiveBtn').classList.remove('hidden');
+  document.getElementById('liveOverlay').classList.remove('hidden');
+  document.getElementById('liveTimer').classList.remove('hidden');
+  
+  let seconds = 0;
+  liveInterval = setInterval(() => {
+    seconds++;
+    const h = Math.floor(seconds / 3600).toString().padStart(2, '0');
+    const m = Math.floor((seconds % 3600) / 60).toString().padStart(2, '0');
+    const s = (seconds % 60).toString().padStart(2, '0');
+    document.getElementById('liveTimer').textContent = `${h}:${m}:${s}`;
+  }, 1000);
+  
+  showToast('بدأ البث المباشر! 🔴');
+}
+
+function endLive() {
+  clearInterval(liveInterval);
+  document.getElementById('startLiveBtn').classList.remove('hidden');
+  document.getElementById('endLiveBtn').classList.add('hidden');
+  document.getElementById('liveOverlay').classList.add('hidden');
+  document.getElementById('liveTimer').classList.add('hidden');
+  document.getElementById('liveTimer').textContent = '00:00:00';
+}
+
+// ==================== POSTS ====================
+function renderPosts() {
+  const feed = document.getElementById('postsFeed');
+  feed.innerHTML = posts.map(post => createPostHTML(post)).join('');
+}
+
+function createPostHTML(post) {
+  const reactionColors = { 'like': 'text-brand-blue', 'love': 'text-red-500', 'care': 'text-yellow-500', 'haha': 'text-yellow-500', 'wow': 'text-yellow-500', 'sad': 'text-yellow-500', 'angry': 'text-orange-500' };
+  const reactionIcons = { 'like': 'fa-thumbs-up', 'love': 'fa-heart', 'care': 'fa-hand-holding-heart', 'haha': 'fa-laugh', 'wow': 'fa-surprise', 'sad': 'fa-sad-tear', 'angry': 'fa-angry' };
+  const reactionEmojis = { 'like': '👍', 'love': '❤️', 'care': '🤗', 'haha': '😂', 'wow': '😮', 'sad': '😢', 'angry': '😡' };
+  
+  const likeClass = post.liked ? (reactionColors[post.reaction] || 'text-brand-blue') : 'text-gray-500 dark:text-dark-secondary';
+  const likeIcon = post.liked ? (reactionIcons[post.reaction] || 'fa-thumbs-up') : 'fa-thumbs-up';
+  const likeText = post.liked ? (post.reaction ? reactionEmojis[post.reaction] + ' ' + getReactionName(post.reaction) : 'إعجاب') : 'إعجاب';
+  
+  let imageHTML = '';
+  if (post.image) {
+    imageHTML = `<div class="mt-3 -mx-4 relative group overflow-hidden"><img src="${post.image}" class="w-full max-h-[500px] object-cover cursor-pointer hover:opacity-95 transition-all duration-500 group-hover:scale-[1.02]" onclick="showImageViewer('${post.image}')"></div>`;
+  }
+  
+  let commentsHTML = post.comments.map(c => `
+    <div class="flex gap-2 mb-2 animate-fade-in">
+      <img src="${c.avatar}" class="w-8 h-8 rounded-full object-cover ring-2 ring-transparent hover:ring-brand-blue/20 transition-all cursor-pointer" onclick="navigateToProfile('${c.author}')">
+      <div class="bg-gray-100 dark:bg-dark-hover rounded-2xl px-3 py-2 max-w-[85%] hover:bg-gray-200 dark:hover:bg-dark-active transition-colors">
+        <p class="text-sm font-semibold hover:underline cursor-pointer" onclick="navigateToProfile('${c.author}')">${c.author}</p>
+        <p class="text-sm">${c.text}</p>
+      </div>
+      <div class="self-center text-xs text-gray-400">${c.time}</div>
+    </div>
+  `).join('');
+  
+  let likedByHTML = '';
+  if (post.likedBy && post.likedBy.length > 0) {
+    const names = post.likedBy.slice(0, 2).join(' و');
+    const others = post.likedBy.length > 2 ? ` و${post.likedBy.length - 2} آخرين` : '';
+    likedByHTML = `<p class="text-sm text-gray-500 dark:text-dark-secondary mt-2"><span class="font-semibold text-brand-text dark:text-dark-text">${names}${others}</span></p>`;
+  }
+  
+  return `
+    <div class="bg-white dark:bg-dark-card rounded-xl shadow-sm animate-fade-in card-hover overflow-hidden" id="post-${post.id}">
+      <div class="p-4">
+        <div class="flex items-center justify-between mb-3">
+          <div class="flex items-center gap-3">
+            <div class="relative">
+              <img src="${post.avatar}" class="w-10 h-10 rounded-full object-cover cursor-pointer ring-2 ring-transparent hover:ring-brand-blue/30 transition-all" onclick="navigateToProfile('${post.author}')">
+              <div class="absolute -bottom-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-white dark:border-dark-card"></div>
+            </div>
+            <div>
+              <p class="font-semibold text-[15px] cursor-pointer hover:underline transition-all" onclick="navigateToProfile('${post.author}')">${post.author}</p>
+              <p class="text-xs text-gray-500 dark:text-dark-secondary flex items-center gap-1">${post.time} • <i class="fas fa-globe-americas text-[10px]"></i></p>
+            </div>
+          </div>
+          <button onclick="openPostMenu(${post.id})" class="w-8 h-8 rounded-full hover:bg-gray-100 dark:hover:bg-dark-hover flex items-center justify-center text-gray-500 transition-all hover:rotate-90"><i class="fas fa-ellipsis-h"></i></button>
+        </div>
+        <p class="text-[15px] leading-relaxed whitespace-pre-wrap">${post.content}</p>
+        ${likedByHTML}
+        ${imageHTML}
+        <div class="flex items-center justify-between mt-3 pt-3 border-t border-gray-200 dark:border-dark-border">
+          <div class="flex items-center gap-1">
+            <div class="flex -space-x-1">
+              <div class="w-5 h-5 rounded-full bg-brand-blue flex items-center justify-center text-white text-[10px] ring-2 ring-white dark:ring-dark-card"><i class="fas fa-thumbs-up"></i></div>
+              <div class="w-5 h-5 rounded-full bg-red-500 flex items-center justify-center text-white text-[10px] ring-2 ring-white dark:ring-dark-card"><i class="fas fa-heart"></i></div>
+            </div>
+            <span class="text-sm text-gray-500 dark:text-dark-secondary mr-1 hover:underline cursor-pointer">${post.likes}</span>
+          </div>
+          <div class="flex gap-4 text-sm text-gray-500 dark:text-dark-secondary">
+            <span class="cursor-pointer hover:underline transition-all">${post.comments.length} تعليقات</span>
+            <span class="cursor-pointer hover:underline transition-all">${post.shares} مشاركات</span>
+          </div>
+        </div>
+        <div class="flex items-center justify-between mt-1 pt-1 border-t border-gray-200 dark:border-dark-border relative">
+          <button onmouseenter="showReactionBar(${post.id})" onmouseleave="hideReactionBar(${post.id})" onclick="toggleLike(${post.id})" class="flex-1 flex items-center justify-center gap-2 py-2 hover:bg-gray-100 dark:hover:bg-dark-hover rounded-lg transition-all group ${likeClass}" id="like-btn-${post.id}">
+            <i class="fas ${likeIcon} text-xl group-hover:scale-125 transition-transform ${post.liked ? 'animate-heart-beat' : ''}"></i>
+            <span class="text-sm font-semibold">${likeText}</span>
+          </button>
+          <div id="reaction-bar-${post.id}" class="reaction-bar absolute bottom-full right-4 bg-white dark:bg-dark-card rounded-full shadow-2xl px-2 py-1.5 flex items-center gap-1 hidden border border-gray-200 dark:border-dark-border z-20" onmouseenter="keepReactionBar(${post.id})" onmouseleave="hideReactionBar(${post.id})">
+            <button onclick="reactToPost(${post.id}, 'like')" class="reaction-emoji text-2xl" title="إعجاب">👍</button>
+            <button onclick="reactToPost(${post.id}, 'love')" class="reaction-emoji text-2xl" title="حب">❤️</button>
+            <button onclick="reactToPost(${post.id}, 'care')" class="reaction-emoji text-2xl" title="اهتمام">🤗</button>
+            <button onclick="reactToPost(${post.id}, 'haha')" class="reaction-emoji text-2xl" title="ضحك">😂</button>
+            <button onclick="reactToPost(${post.id}, 'wow')" class="reaction-emoji text-2xl" title="واو">😮</button>
+            <button onclick="reactToPost(${post.id}, 'sad')" class="reaction-emoji text-2xl" title="حزن">😢</button>
+            <button onclick="reactToPost(${post.id}, 'angry')" class="reaction-emoji text-2xl" title="غضب">😡</button>
+          </div>
+          <button onclick="toggleComments(${post.id})" class="flex-1 flex items-center justify-center gap-2 py-2 hover:bg-gray-100 dark:hover:bg-dark-hover rounded-lg transition-all text-gray-500 dark:text-dark-secondary group">
+            <i class="far fa-comment-alt text-xl group-hover:scale-110 transition-transform"></i>
+            <span class="text-sm font-semibold">تعليق</span>
+          </button>
+          <button onclick="openShareModal(${post.id})" class="flex-1 flex items-center justify-center gap-2 py-2 hover:bg-gray-100 dark:hover:bg-dark-hover rounded-lg transition-all text-gray-500 dark:text-dark-secondary group">
+            <i class="fas fa-share text-xl group-hover:scale-110 transition-transform"></i>
+            <span class="text-sm font-semibold">مشاركة</span>
+          </button>
+        </div>
+        <div id="comments-${post.id}" class="hidden mt-3 pt-3 border-t border-gray-200 dark:border-dark-border">
+          <div class="space-y-2 mb-3" id="comments-list-${post.id}">${commentsHTML}</div>
+          <div class="flex gap-2">
+            <img src="${currentUser.avatar}" class="w-8 h-8 rounded-full object-cover ring-2 ring-transparent">
+            <div class="flex-1 relative">
+              <input type="text" id="comment-input-${post.id}" placeholder="اكتب تعليقاً..." onkeypress="if(event.key==='Enter')addComment(${post.id})" class="w-full bg-gray-100 dark:bg-dark-hover rounded-full px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-brand-blue/20 dark:text-dark-text transition-all text-right">
+              <div class="absolute left-2 top-1/2 -translate-y-1/2 flex gap-1">
+                <button class="w-6 h-6 rounded-full hover:bg-gray-200 flex items-center justify-center text-gray-400 transition-colors"><i class="far fa-smile text-sm"></i></button>
+                <button class="w-6 h-6 rounded-full hover:bg-gray-200 flex items-center justify-center text-gray-400 transition-colors"><i class="fas fa-camera text-sm"></i></button>
+                <button onclick="addComment(${post.id})" class="w-6 h-6 rounded-full hover:bg-gray-200 flex items-center justify-center text-brand-blue transition-colors"><i class="fas fa-paper-plane text-sm"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function getReactionName(reaction) {
+  const names = { 'like': 'إعجاب', 'love': 'حب', 'care': 'اهتمام', 'haha': 'ضحك', 'wow': 'واو', 'sad': 'حزن', 'angry': 'غضب' };
+  return names[reaction] || 'إعجاب';
+}
+
+let reactionBarTimeout;
+function showReactionBar(postId) {
+  clearTimeout(reactionBarTimeout);
+  const bar = document.getElementById(`reaction-bar-${postId}`);
+  if (bar) { bar.classList.remove('hidden'); bar.classList.add('flex', 'animate-reaction-pop'); }
+}
+
+function hideReactionBar(postId) {
+  reactionBarTimeout = setTimeout(() => {
+    const bar = document.getElementById(`reaction-bar-${postId}`);
+    if (bar) { bar.classList.add('hidden'); bar.classList.remove('flex', 'animate-reaction-pop'); }
+  }, 300);
+}
+
+function keepReactionBar(postId) { clearTimeout(reactionBarTimeout); }
+
+function toggleLike(postId) {
+  const post = posts.find(p => p.id === postId);
+  if (post) {
+    if (post.liked && post.reaction === 'like') {
+      post.liked = false; post.reaction = null; post.likes--; post.likedBy = post.likedBy.filter(n => n !== 'أنت');
+    } else {
+      post.liked = true; post.reaction = 'like';
+      if (!post.likedBy.includes('أنت')) { post.likedBy.unshift('أنت'); post.likes++; }
+    }
+    renderPosts(); saveToStorage();
+  }
+}
+
+function reactToPost(postId, reaction) {
+  const post = posts.find(p => p.id === postId);
+  if (post) {
+    const wasLiked = post.liked;
+    post.liked = true; post.reaction = reaction;
+    if (!wasLiked) { post.likes++; post.likedBy.unshift('أنت'); }
+    renderPosts(); saveToStorage();
+    const emojiMap = { 'like': '👍', 'love': '❤️', 'care': '🤗', 'haha': '😂', 'wow': '😮', 'sad': '😢', 'angry': '😡' };
+    showToast(`تفاعلت بـ ${emojiMap[reaction]}`);
+  }
+  hideReactionBar(postId);
+}
+
+function toggleComments(postId) {
+  const commentsDiv = document.getElementById(`comments-${postId}`);
+  commentsDiv.classList.toggle('hidden');
+  if (!commentsDiv.classList.contains('hidden')) {
+    setTimeout(() => document.getElementById(`comment-input-${postId}`).focus(), 100);
+  }
+}
+
+function addComment(postId) {
+  const input = document.getElementById(`comment-input-${postId}`);
+  const text = input.value.trim();
+  if (text) {
+    const post = posts.find(p => p.id === postId);
+    post.comments.push({ author: currentUser.name, avatar: currentUser.avatar, text: text, time: 'الآن' });
+    input.value = ''; renderPosts(); saveToStorage();
+    document.getElementById(`comments-${postId}`).classList.remove('hidden');
+    showToast('تم إضافة التعليق 💬');
+  }
+}
+
+function openShareModal(postId) {
+  sharePostId = postId;
+  document.getElementById('shareModal').classList.remove('hidden');
+  document.getElementById('shareModal').classList.add('flex');
+}
+
+function closeShareModal() {
+  document.getElementById('shareModal').classList.add('hidden');
+  document.getElementById('shareModal').classList.remove('flex');
+  sharePostId = null;
+}
+
+function shareNow() {
+  if (sharePostId) {
+    const post = posts.find(p => p.id === sharePostId);
+    if (post) { post.shares++; renderPosts(); saveToStorage(); }
+  }
+  closeShareModal();
+  showToast('تمت المشاركة على جدولك الزمني 🔄');
+}
+
+function copyLink() {
+  navigator.clipboard.writeText('https://tawasul.com/post/' + sharePostId);
+  showToast('تم نسخ الرابط 📋');
+}
+
+function openPostMenu(postId) {
+  postMenuId = postId;
+  document.getElementById('postMenuModal').classList.remove('hidden');
+  document.getElementById('postMenuModal').classList.add('flex');
+}
+
+function closePostMenu() {
+  document.getElementById('postMenuModal').classList.add('hidden');
+  document.getElementById('postMenuModal').classList.remove('flex');
+  postMenuId = null;
+}
+
+function savePost() {
+  closePostMenu();
+  showToast('تم حفظ المنشور 🔖');
+}
+
+function hidePost() {
+  if (postMenuId) {
+    const el = document.getElementById(`post-${postMenuId}`);
+    if (el) el.style.display = 'none';
+  }
+  closePostMenu();
+  showToast('تم إخفاء المنشور 👁️');
+}
+
+function reportPost() {
+  closePostMenu();
+  showToast('تم إرسال البلاغ ⚠️');
+}
+
+function deletePost() {
+  if (postMenuId) {
+    posts = posts.filter(p => p.id !== postMenuId);
+    renderPosts(); saveToStorage();
+  }
+  closePostMenu();
+  showToast('تم حذف المنشور 🗑️');
+}
+
+// ==================== CREATE POST ====================
+function openCreatePost() {
+  document.getElementById('createPostModal').classList.remove('hidden');
+  document.getElementById('createPostModal').classList.add('flex');
+  setTimeout(() => document.getElementById('postContent').focus(), 100);
+}
+
+function closeCreatePost() {
+  document.getElementById('createPostModal').classList.add('hidden');
+  document.getElementById('createPostModal').classList.remove('flex');
+  document.getElementById('postContent').value = '';
+  document.getElementById('postImagePreview').classList.add('hidden');
+  document.getElementById('postFeelingDisplay').classList.add('hidden');
+  postImageData = null; postFeeling = null;
+  updatePostButton();
+}
+
+function triggerFileUpload() {
+  document.getElementById('postFileInput').click();
+}
+
+function handlePostFileUpload(input) {
+  if (input.files && input.files[0]) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      postImageData = e.target.result;
+      const preview = document.getElementById('postImagePreview');
+      preview.classList.remove('hidden');
+      preview.querySelector('img').src = postImageData;
+      updatePostButton();
+    };
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
+function removePostImage() {
+  postImageData = null;
+  document.getElementById('postImagePreview').classList.add('hidden');
+  updatePostButton();
+}
+
+function openFeelingPicker() {
+  document.getElementById('feelingPickerModal').classList.remove('hidden');
+  document.getElementById('feelingPickerModal').classList.add('flex');
+}
+
+function closeFeelingPicker() {
+  document.getElementById('feelingPickerModal').classList.add('hidden');
+  document.getElementById('feelingPickerModal').classList.remove('flex');
+}
+
+function selectFeeling(feeling) {
+  postFeeling = feeling;
+  const display = document.getElementById('postFeelingDisplay');
+  display.classList.remove('hidden');
+  document.getElementById('postFeelingText').textContent = 'يشعر بـ ' + feeling;
+  closeFeelingPicker();
+  updatePostButton();
+}
+
+function submitPost() {
+  const content = document.getElementById('postContent').value.trim();
+  if (!content && !postImageData) return;
+  
+  let finalContent = content;
+  if (postFeeling) finalContent += '\n\n— يشعر بـ ' + postFeeling;
+  
+  const newPost = {
+    id: Date.now(),
+    author: currentUser.name,
+    avatar: currentUser.avatar,
+    time: 'الآن',
+    content: finalContent,
+    image: postImageData,
+    likes: 0,
+    comments: [],
+    shares: 0,
+    liked: false,
+    reaction: null,
+    likedBy: []
+  };
+  
+  posts.unshift(newPost);
+  renderPosts(); saveToStorage();
+  closeCreatePost();
+  showToast('تم نشر المنشور! 🚀');
+}
+
+function updatePostButton() {
+  const content = document.getElementById('postContent').value.trim();
+  const btn = document.getElementById('submitPostBtn');
+  if (content || postImageData) {
+    btn.disabled = false;
+    btn.classList.remove('bg-brand-blue/50', 'cursor-not-allowed');
+    btn.classList.add('bg-brand-blue', 'hover:bg-brand-dark', 'cursor-pointer', 'btn-hover', 'shadow-lg', 'shadow-brand-blue/30');
+  } else {
+    btn.disabled = true;
+    btn.classList.add('bg-brand-blue/50', 'cursor-not-allowed');
+    btn.classList.remove('bg-brand-blue', 'hover:bg-brand-dark', 'cursor-pointer', 'btn-hover', 'shadow-lg', 'shadow-brand-blue/30');
+  }
+}
+
+document.getElementById('postContent').addEventListener('input', updatePostButton);
+
+// ==================== MESSENGER ====================
+function renderMessengerList() {
+  const container = document.getElementById('messengerChatList');
+  container.innerHTML = messengerConversations.map(c => `
+    <div onclick="openChat(${c.id})" class="flex gap-3 p-2 hover:bg-gray-100 dark:hover:bg-dark-hover rounded-xl cursor-pointer transition-all group ${c.unread ? 'bg-blue-50/50 dark:bg-blue-900/10' : ''}">
+      <div class="relative">
+        <img src="${c.avatar}" class="w-14 h-14 rounded-full object-cover">
+        ${c.online ? '<div class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-white dark:border-dark-card"></div>' : ''}
+      </div>
+      <div class="flex-1 min-w-0">
+        <div class="flex justify-between items-start">
+          <p class="font-semibold text-sm ${c.unread ? 'text-brand-text dark:text-dark-text' : 'text-gray-700 dark:text-dark-secondary'}">${c.name}</p>
+          <span class="text-xs ${c.unread ? 'text-brand-blue font-medium' : 'text-gray-400'}">${c.time}</span>
+        </div>
+        <p class="text-sm ${c.unread ? 'text-brand-text dark:text-dark-text font-medium' : 'text-gray-500 dark:text-dark-secondary'} truncate">${c.message}</p>
+      </div>
+      ${c.unread ? '<div class="w-2.5 h-2.5 bg-brand-blue rounded-full mt-3 flex-shrink-0"></div>' : ''}
+    </div>
+  `).join('');
+}
+
+function openChat(chatId) {
+  currentChatId = chatId;
+  const chat = messengerConversations.find(c => c.id === chatId);
+  if (!chat) return;
+  
+  chat.unread = false;
+  renderMessengerList();
+  
+  document.getElementById('chatEmptyState').classList.add('hidden');
+  document.getElementById('chatHeader').classList.remove('hidden');
+  document.getElementById('chatMessagesArea').classList.remove('hidden');
+  document.getElementById('chatInputArea').classList.remove('hidden');
+  
+  document.getElementById('chatHeaderAvatar').src = chat.avatar;
+  document.getElementById('chatHeaderName').textContent = chat.name;
+  document.getElementById('chatHeaderStatus').style.display = chat.online ? 'block' : 'none';
+  document.getElementById('chatHeaderStatusText').textContent = chat.online ? 'نشط الآن' : 'غير متصل';
+  
+  renderChatMessages();
+}
+
+function renderChatMessages() {
+  const chat = messengerConversations.find(c => c.id === currentChatId);
+  if (!chat) return;
+  
+  const container = document.getElementById('chatMessagesArea');
+  container.innerHTML = chat.messages.map(m => `
+    <div class="flex ${m.sender === 'me' ? 'justify-start' : 'justify-end'} animate-fade-in">
+      <div class="chat-bubble ${m.sender === 'me' ? 'sent bg-brand-blue text-white' : 'received bg-gray-100 dark:bg-dark-hover text-brand-text dark:text-dark-text'} rounded-2xl px-4 py-2 max-w-[70%] relative group">
+        <p class="text-sm">${m.text}</p>
+        <span class="text-[10px] opacity-70 mt-1 block">${m.time}</span>
+        <div class="absolute ${m.sender === 'me' ? 'left-0' : 'right-0'} top-0 opacity-0 group-hover:opacity-100 transition-opacity">
+          <button class="w-6 h-6 rounded-full bg-gray-200 dark:bg-dark-hover flex items-center justify-center text-gray-500"><i class="fas fa-ellipsis-h text-xs"></i></button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+  
+  container.scrollTop = container.scrollHeight;
+}
+
+function sendMessage() {
+  const input = document.getElementById('chatInput');
+  const text = input.value.trim();
+  if (!text || !currentChatId) return;
+  
+  const chat = messengerConversations.find(c => c.id === currentChatId);
+  chat.messages.push({ sender: 'me', text: text, time: new Date().toLocaleTimeString('ar', { hour: '2-digit', minute: '2-digit' }) });
+  chat.message = text;
+  chat.time = 'الآن';
+  input.value = '';
+  renderChatMessages();
+  renderMessengerList();
+  
+  setTimeout(() => {
+    chat.messages.push({ sender: 'other', text: 'رد تلقائي: ' + text, time: new Date().toLocaleTimeString('ar', { hour: '2-digit', minute: '2-digit' }) });
+    renderChatMessages();
+    showToast('رسالة جديدة من ' + chat.name);
+  }, 2000);
+}
+
+function filterMessenger(type) {
+  renderMessengerList();
+  showToast('تم تصفية المحادثات 🔍');
+}
+
+function filterMessengerSearch() {
+  const query = document.getElementById('messengerSearch').value.toLowerCase();
+  const items = document.querySelectorAll('#messengerChatList > div');
+  items.forEach(item => {
+    const name = item.querySelector('p.font-semibold').textContent.toLowerCase();
+    item.style.display = name.includes(query) ? 'flex' : 'none';
+  });
+}
+
+// ==================== CALLS ====================
+function startVoiceCall() {
+  const chat = messengerConversations.find(c => c.id === currentChatId);
+  if (!chat) return;
+  
+  document.getElementById('voiceCallOverlay').classList.remove('hidden');
+  document.getElementById('voiceCallOverlay').classList.add('flex');
+  document.getElementById('voiceCallAvatar').src = chat.avatar;
+  document.getElementById('voiceCallName').textContent = chat.name;
+  
+  setTimeout(() => {
+    document.getElementById('voiceCallStatus').textContent = 'متصل';
+    document.getElementById('voiceCallTimer').classList.remove('hidden');
+    let seconds = 0;
+    activeCallTimer = setInterval(() => {
+      seconds++;
+      const m = Math.floor(seconds / 60).toString().padStart(2, '0');
+      const s = (seconds % 60).toString().padStart(2, '0');
+      document.getElementById('voiceCallTimer').textContent = `${m}:${s}`;
+    }, 1000);
+  }, 2000);
+}
+
+function endVoiceCall() {
+  clearInterval(activeCallTimer);
+  document.getElementById('voiceCallOverlay').classList.add('hidden');
+  document.getElementById('voiceCallOverlay').classList.remove('flex');
+  document.getElementById('voiceCallTimer').classList.add('hidden');
+  document.getElementById('voiceCallTimer').textContent = '00:00';
+  document.getElementById('voiceCallStatus').textContent = 'جاري الاتصال...';
+  showToast('تم إنهاء المكالمة 📞');
+}
+
+function startVideoCall() {
+  const chat = messengerConversations.find(c => c.id === currentChatId);
+  if (!chat) return;
+  
+  document.getElementById('videoCallOverlay').classList.remove('hidden');
+  document.getElementById('videoCallOverlay').classList.add('flex');
+  document.getElementById('videoCallAvatar').src = chat.avatar;
+  document.getElementById('videoCallName').textContent = chat.name;
+  
+  setTimeout(() => {
+    document.getElementById('videoCallStatus').textContent = 'متصل عبر الفيديو';
+    document.getElementById('videoCallTimer').classList.remove('hidden');
+    let seconds = 0;
+    activeCallTimer = setInterval(() => {
+      seconds++;
+      const m = Math.floor(seconds / 60).toString().padStart(2, '0');
+      const s = (seconds % 60).toString().padStart(2, '0');
+      document.getElementById('videoCallTimer').textContent = `${m}:${s}`;
+    }, 1000);
+  }, 2000);
+}
+
+function endVideoCall() {
+  clearInterval(activeCallTimer);
+  document.getElementById('videoCallOverlay').classList.add('hidden');
+  document.getElementById('videoCallOverlay').classList.remove('flex');
+  document.getElementById('videoCallTimer').classList.add('hidden');
+  document.getElementById('videoCallTimer').textContent = '00:00';
+  document.getElementById('videoCallStatus').textContent = 'جاري بدء مكالمة الفيديو...';
+  showToast('تم إنهاء مكالمة الفيديو 📹');
+}
+
+function toggleMuteCall() {
+  showToast('تم كتم/إلغاء كتم الميكروفون 🎤');
+}
+
+function toggleVideoCamera() {
+  showToast('تم تشغيل/إيقاف الكاميرا 📷');
+}
+
+// ==================== REELS ====================
+function renderReels() {
+  const container = document.getElementById('reelsContainer');
+  container.innerHTML = reels.map(reel => `
+    <div class="reel-item relative bg-black flex items-center justify-center">
+      <img src="${reel.video}" class="reel-video absolute inset-0 w-full h-full object-cover">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+      <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+        <div class="flex items-center gap-3 mb-3">
+          <img src="${reel.avatar}" class="w-10 h-10 rounded-full border-2 border-white">
+          <span class="font-bold">${reel.author}</span>
+          <button class="px-3 py-1 bg-white/20 backdrop-blur rounded-full text-xs font-bold hover:bg-white/30 transition-colors">متابعة</button>
+        </div>
+        <p class="text-sm mb-3 line-clamp-2">${reel.caption}</p>
+        <div class="flex items-center gap-4">
+          <button class="flex flex-col items-center gap-1"><i class="fas fa-heart text-2xl"></i><span class="text-xs">${reel.likes}</span></button>
+          <button class="flex flex-col items-center gap-1"><i class="fas fa-comment text-2xl"></i><span class="text-xs">${reel.comments}</span></button>
+          <button class="flex flex-col items-center gap-1"><i class="fas fa-share text-2xl"></i></button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ==================== RENDER LISTS ====================
+function renderContacts() {
+  const container = document.getElementById('contactsList');
+  container.innerHTML = contacts.map(c => `
+    <div class="flex items-center gap-3 p-2 hover:bg-gray-200 dark:hover:bg-dark-hover rounded-xl cursor-pointer transition-all group" onclick="navigateToProfile('${c.name}')">
+      <div class="relative">
+        <img src="${c.avatar}" class="w-9 h-9 rounded-full object-cover">
+        ${c.online ? '<div class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 rounded-full border-2 border-brand-bg dark:border-dark-bg"></div>' : ''}
+      </div>
+      <span class="font-medium text-[15px] group-hover:text-brand-blue transition-colors">${c.name}</span>
+    </div>
+  `).join('');
+}
+
+function renderNotifications() {
+  const container = document.getElementById('notificationsList');
+  container.innerHTML = notifications.map(n => `
+    <div class="flex gap-3 p-2 hover:bg-gray-100 dark:hover:bg-dark-hover rounded-xl cursor-pointer transition-all ${n.read ? '' : 'bg-blue-50/50 dark:bg-blue-900/10'}">
+      <div class="relative flex-shrink-0">
+        <img src="${n.avatar}" class="w-14 h-14 rounded-full object-cover">
+        <div class="absolute -bottom-1 -right-1 w-7 h-7 ${n.type === 'like' ? 'bg-brand-blue' : n.type === 'love' ? 'bg-red-500' : n.type === 'comment' ? 'bg-green-500' : 'bg-gray-500'} rounded-full flex items-center justify-center border-2 border-white dark:border-dark-card">
+          <i class="fas ${n.type === 'like' ? 'fa-thumbs-up' : n.type === 'love' ? 'fa-heart' : n.type === 'comment' ? 'fa-comment' : n.type === 'share' ? 'fa-share' : 'fa-users'} text-white text-xs"></i>
+        </div>
+      </div>
+      <div class="flex-1 min-w-0">
+        <p class="text-sm"><span class="font-semibold">${n.name}</span> ${n.action}</p>
+        <p class="text-xs ${n.read ? 'text-gray-400' : 'text-brand-blue font-medium'} mt-0.5">${n.time}</p>
+      </div>
+      ${!n.read ? '<div class="w-2.5 h-2.5 bg-brand-blue rounded-full mt-2 flex-shrink-0"></div>' : ''}
+    </div>
+  `).join('');
+}
+
+function markAllNotificationsRead() {
+  notifications.forEach(n => n.read = true);
+  renderNotifications();
+  showToast('تم تحديد كل الإشعارات كمقروءة ✓');
+}
+
+function renderShortcuts() {
+  const container = document.getElementById('shortcutsList');
+  container.innerHTML = [
+    { name: 'مطورو القاهرة', img: 'https://picsum.photos/seed/group1/40/40' },
+    { name: 'عشاق التقنية', img: 'https://picsum.photos/seed/group2/40/40' },
+    { name: 'نادي الألعاب', img: 'https://picsum.photos/seed/group3/40/40' }
+  ].map(s => `
+    <div class="flex items-center gap-3 p-2 hover:bg-gray-200 dark:hover:bg-dark-hover rounded-xl cursor-pointer transition-all group">
+      <img src="${s.img}" class="w-9 h-9 rounded-lg object-cover">
+      <span class="font-semibold text-[15px]">${s.name}</span>
+    </div>
+  `).join('');
+}
+
+function renderSponsored() {
+  const container = document.getElementById('sponsoredList');
+  container.innerHTML = [
+    { title: 'تسوق أحدث الأدوات التقنية', site: 'techstore.com', img: 'https://picsum.photos/seed/ad1/120/120' },
+    { title: 'تعلم البرمجة في 30 يوماً', site: 'codecamp.io', img: 'https://picsum.photos/seed/ad2/120/120' }
+  ].map(ad => `
+    <div class="flex gap-3 cursor-pointer group p-2 hover:bg-gray-100 dark:hover:bg-dark-hover rounded-xl transition-all">
+      <img src="${ad.img}" class="w-[120px] h-[120px] rounded-lg object-cover group-hover:opacity-90 transition-opacity">
+      <div class="flex-1 py-1">
+        <p class="text-[15px] font-semibold leading-tight group-hover:underline line-clamp-2">${ad.title}</p>
+        <p class="text-xs text-gray-500 dark:text-dark-secondary mt-1">${ad.site}</p>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderLatestNews() {
+  const container = document.getElementById('latestNewsList');
+  container.innerHTML = latestNews.map(news => `
+    <div class="flex gap-3 cursor-pointer hover:bg-gray-50 dark:hover:bg-dark-hover p-2 rounded-lg transition-all group">
+      <img src="${news.img}" class="w-14 h-14 rounded-lg object-cover flex-shrink-0 group-hover:scale-105 transition-transform">
+      <div class="flex-1 min-w-0">
+        <p class="text-sm font-semibold line-clamp-2 group-hover:text-brand-blue transition-colors">${news.title}</p>
+        <div class="flex items-center gap-2 mt-1">
+          <span class="text-xs text-gray-500 dark:text-dark-secondary">${news.source}</span>
+          <span class="text-[10px] text-gray-400">•</span>
+          <span class="text-xs text-gray-400">${news.time}</span>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderTrending() {
+  const container = document.getElementById('trendingList');
+  container.innerHTML = trendingTopics.map(t => `
+    <div class="flex items-center justify-between p-2 hover:bg-gray-50 dark:hover:bg-dark-hover rounded-lg cursor-pointer transition-all group">
+      <div>
+        <p class="text-sm font-bold text-brand-blue group-hover:underline">${t.tag}</p>
+        <p class="text-xs text-gray-500 dark:text-dark-secondary">${t.posts}</p>
+      </div>
+      <i class="fas fa-chevron-left text-gray-300 text-xs"></i>
+    </div>
+  `).join('');
+}
+
+function renderWatchVideos() {
+  const container = document.getElementById('watchVideosList');
+  container.innerHTML = [
+    { title: 'اختراق تقني مذهل في 2026', channel: 'قناة التقنية', views: '1.2M', time: 'منذ يومين', img: 'https://picsum.photos/seed/vid1/400/225' },
+    { title: 'مدونة سفر: استكشاف كنوز القاهرة', channel: 'مستكشف السفر', views: '856K', time: 'منذ 5 أيام', img: 'https://picsum.photos/seed/vid2/400/225' },
+    { title: 'دورة طبخ: الكشري المصري', channel: 'مطبخ الطهاة', views: '2.3M', time: 'منذ أسبوع', img: 'https://picsum.photos/seed/vid3/400/225' }
+  ].map(v => `
+    <div class="bg-white dark:bg-dark-card rounded-xl shadow-sm overflow-hidden cursor-pointer group card-hover">
+      <div class="relative">
+        <img src="${v.img}" class="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+          <div class="w-14 h-14 bg-white/90 rounded-full flex items-center justify-center shadow-lg animate-scale-in"><i class="fas fa-play text-brand-blue text-xl mr-1"></i></div>
+        </div>
+        <span class="absolute bottom-2 left-2 bg-black/70 text-white text-xs px-2 py-1 rounded font-medium">12:45</span>
+      </div>
+      <div class="p-3 flex gap-3">
+        <img src="https://i.pravatar.cc/150?img=60" class="w-10 h-10 rounded-full object-cover">
+        <div>
+          <h3 class="font-semibold text-[15px] line-clamp-2 group-hover:text-brand-blue transition-colors">${v.title}</h3>
+          <p class="text-sm text-gray-500 dark:text-dark-secondary mt-1">${v.channel} • ${v.views} مشاهدة • ${v.time}</p>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderMarketplaceItems() {
+  const container = document.getElementById('marketplaceItems');
+  container.innerHTML = [
+    { price: '$120', title: 'جراب iPhone 11 Pro Max أصلي', location: 'القاهرة', time: 'منذ يومين', img: 'https://picsum.photos/seed/mp1/200/200' },
+    { price: '$450', title: 'لابتوب ألعاب - RTX 3060', location: 'الجيزة', time: 'منذ 5 ساعات', img: 'https://picsum.photos/seed/mp2/200/200' },
+    { price: '$85', title: 'Nike Air Jordan - مقاس 42', location: 'الإسكندرية', time: 'منذ يوم', img: 'https://picsum.photos/seed/mp3/200/200' },
+    { price: '$2,500', title: 'Honda Civic 2019 - فول أوبشن', location: 'القاهرة', time: 'منذ 3 أيام', img: 'https://picsum.photos/seed/mp4/200/200' },
+    { price: '$35', title: 'طاولة قهوة - خشبية', location: 'المنصورة', time: 'منذ أسبوع', img: 'https://picsum.photos/seed/mp5/200/200' }
+  ].map(item => `
+    <div class="bg-white dark:bg-dark-card rounded-xl shadow-sm overflow-hidden cursor-pointer hover:shadow-lg transition-all group">
+      <div class="relative overflow-hidden"><img src="${item.img}" class="w-full aspect-square object-cover group-hover:scale-110 transition-transform duration-500"></div>
+      <div class="p-3">
+        <p class="font-bold text-lg">${item.price}</p>
+        <p class="text-sm text-gray-500 dark:text-dark-secondary line-clamp-2">${item.title}</p>
+        <p class="text-xs text-gray-400 mt-1">${item.location} • ${item.time}</p>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderGroups() {
+  const container = document.getElementById('groupsList');
+  container.innerHTML = [
+    { name: 'مطورو القاهرة', members: '12.5K', posts: '45 منشور اليوم', img: 'https://picsum.photos/seed/grp1/80/80', joined: true },
+    { name: 'عشاق التقنية مصر', members: '8.2K', posts: '23 منشور اليوم', img: 'https://picsum.photos/seed/grp2/80/80', joined: true },
+    { name: 'نادي الألعاب', members: '45K', posts: '120 منشور اليوم', img: 'https://picsum.photos/seed/grp3/80/80', joined: false }
+  ].map(g => `
+    <div class="bg-white dark:bg-dark-card rounded-xl shadow-sm p-4 flex items-center gap-4 card-hover cursor-pointer">
+      <img src="${g.img}" class="w-16 h-16 rounded-xl object-cover">
+      <div class="flex-1">
+        <h3 class="font-bold text-lg">${g.name}</h3>
+        <p class="text-sm text-gray-500 dark:text-dark-secondary">${g.members} عضو • ${g.posts}</p>
+        <div class="flex gap-2 mt-2">
+          <img src="https://i.pravatar.cc/150?img=5" class="w-6 h-6 rounded-full object-cover">
+          <img src="https://i.pravatar.cc/150?img=9" class="w-6 h-6 rounded-full object-cover">
+          <img src="https://i.pravatar.cc/150?img=12" class="w-6 h-6 rounded-full object-cover">
+          <span class="text-xs text-gray-500 self-center">+ 5 أصدقاء منضمون</span>
+        </div>
+      </div>
+      <button class="${g.joined ? 'bg-gray-100 dark:bg-dark-hover hover:bg-gray-200 text-brand-text' : 'bg-brand-blue hover:bg-brand-dark text-white'} px-4 py-2 rounded-lg font-semibold text-sm transition-colors">${g.joined ? 'منضم' : 'انضمام'}</button>
+    </div>
+  `).join('');
+}
+
+function renderGames() {
+  const container = document.getElementById('gamesList');
+  container.innerHTML = [
+    { name: 'PUBG Mobile', players: '2.5M', img: 'https://picsum.photos/seed/game1/100/100' },
+    { name: 'Candy Crush Saga', players: '5M', img: 'https://picsum.photos/seed/game2/100/100' }
+  ].map(g => `
+    <div class="bg-white dark:bg-dark-card rounded-xl shadow-sm p-4 flex items-center gap-4 card-hover cursor-pointer">
+      <img src="${g.img}" class="w-20 h-20 rounded-xl object-cover">
+      <div class="flex-1">
+        <h3 class="font-bold text-lg">${g.name}</h3>
+        <p class="text-sm text-gray-500 dark:text-dark-secondary">${g.players} لاعب متصل</p>
+        <div class="flex items-center gap-2 mt-2">
+          <div class="flex -space-x-2">
+            <img src="https://i.pravatar.cc/150?img=5" class="w-6 h-6 rounded-full border-2 border-white dark:border-dark-card">
+            <img src="https://i.pravatar.cc/150?img=9" class="w-6 h-6 rounded-full border-2 border-white dark:border-dark-card">
+            <img src="https://i.pravatar.cc/150?img=12" class="w-6 h-6 rounded-full border-2 border-white dark:border-dark-card">
+          </div>
+          <span class="text-xs text-gray-500">أصدقاء يلعبون</span>
+        </div>
+        <button class="mt-3 bg-brand-blue hover:bg-brand-dark text-white px-6 py-2 rounded-lg text-sm font-semibold transition-all btn-hover shadow-lg shadow-brand-blue/30">العب الآن</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ==================== PROFILE ====================
+function renderProfilePosts() {
+  const container = document.getElementById('profilePosts');
+  const myPosts = posts.filter(p => p.author === currentUser.name);
+  if (myPosts.length === 0) {
+    container.innerHTML = `<div class="bg-white dark:bg-dark-card rounded-xl shadow-sm p-8 text-center"><div class="w-16 h-16 bg-gray-100 dark:bg-dark-hover rounded-full flex items-center justify-center mx-auto mb-3"><i class="fas fa-newspaper text-gray-400 text-2xl"></i></div><h3 class="text-lg font-bold mb-1">لا توجد منشورات بعد</h3><p class="text-gray-500 dark:text-dark-secondary text-sm">عندما تنشئ منشورات، ستظهر هنا.</p></div>`;
+  } else {
+    container.innerHTML = myPosts.map(post => createPostHTML(post)).join('');
+  }
+}
+
+function navigateToProfile(name) {
+  if (name === currentUser.name) navigateTo('profile');
+  else showToast('عرض ملف ' + name + ' (عرض توضيحي)');
+}
+
+// ==================== IMAGE VIEWER ====================
+function showImageViewer(src) {
+  const modal = document.getElementById('imageViewerModal');
+  document.getElementById('viewerImage').src = src;
+  modal.classList.remove('hidden');
+  modal.classList.add('flex');
+}
+
+function closeImageViewer() {
+  document.getElementById('imageViewerModal').classList.add('hidden');
+  document.getElementById('imageViewerModal').classList.remove('flex');
+}
+
+// ==================== DARK MODE ====================
+function toggleDarkMode() {
+  darkMode = !darkMode;
+  document.documentElement.classList.toggle('dark');
+  const icon = document.getElementById('darkModeIcon');
+  icon.className = darkMode ? 'fas fa-sun text-yellow-400 text-lg transition-all' : 'fas fa-moon text-gray-700 dark:text-dark-text text-lg transition-all';
+  showToast(darkMode ? '🌙 تم تفعيل الوضع الليلي' : '☀️ تم تفعيل الوضع الفاتح');
+}
+
+// ==================== LANGUAGE ====================
+function toggleLanguage() {
+  lang = lang === 'ar' ? 'en' : 'ar';
+  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  document.documentElement.lang = lang;
+  showToast(lang === 'ar' ? 'تم التبديل للعربية 🇸🇦' : 'Switched to English 🇺🇸');
+}
+
+// ==================== DROPDOWNS ====================
+function toggleAccountMenu() {
+  const dropdown = document.getElementById('accountMenuDropdown');
+  document.getElementById('notificationsDropdown').classList.add('hidden');
+  dropdown.classList.toggle('hidden');
+}
+
+function toggleNotifications() {
+  const dropdown = document.getElementById('notificationsDropdown');
+  document.getElementById('accountMenuDropdown').classList.add('hidden');
+  dropdown.classList.toggle('hidden');
+  markAllNotificationsRead();
+}
+
+function toggleSearchDropdown(show) {
+  const dropdown = document.getElementById('searchDropdown');
+  if (show) dropdown.classList.remove('hidden');
+  else setTimeout(() => dropdown.classList.add('hidden'), 200);
+}
+
+// ==================== TOAST ====================
+function showToast(message) {
+  const toast = document.getElementById('toast');
+  document.getElementById('toastMessage').textContent = message;
+  toast.classList.remove('translate-y-20', 'opacity-0');
+  setTimeout(() => { toast.classList.add('translate-y-20', 'opacity-0'); }, 3000);
+}
+
+// ==================== INIT ====================
+document.addEventListener('DOMContentLoaded', () => {
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) toggleDarkMode();
+});
+
+// Close dropdowns on outside click
+document.addEventListener('click', (e) => {
+  const dropdowns = ['accountMenuDropdown', 'notificationsDropdown', 'searchDropdown', 'postMenuModal', 'shareModal', 'feelingPickerModal', 'createStoryModal', 'createRoomModal', 'liveModal'];
+  dropdowns.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && !el.contains(e.target) && !e.target.closest(`[onclick*="${id.replace('Modal', '')}"]`)) {
+      if (id === 'postMenuModal') closePostMenu();
+      else if (id === 'shareModal') closeShareModal();
+      else if (id === 'feelingPickerModal') closeFeelingPicker();
+      else if (id === 'createStoryModal') closeCreateStory();
+      else if (id === 'createRoomModal') closeCreateRoom();
+      else if (id === 'liveModal') closeLiveModal();
+      else el.classList.add('hidden');
+    }
+  });
+});
+
+// Keyboard shortcuts
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeCreatePost(); closeCreateStory(); closeStory(); closeImageViewer(); closeLiveModal(); closeCreateRoom(); closeShareModal(); closePostMenu(); closeFeelingPicker();
+    document.querySelectorAll('[id$="Dropdown"]').forEach(el => el.classList.add('hidden'));
+  }
+});
+
+// Infinite scroll simulation
+let isLoading = false;
+window.addEventListener('scroll', () => {
+  if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 500 && !isLoading && currentPage === 'home') {
+    isLoading = true;
+    document.getElementById('feedLoader').classList.remove('hidden');
+    setTimeout(() => {
+      document.getElementById('feedLoader').classList.add('hidden');
+      isLoading = false;
+    }, 1500);
+  }
+});
+</script>
+
+</body>
+</html>
